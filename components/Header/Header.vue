@@ -2,6 +2,7 @@
   <div class="">
       <Menu />
       Slider
+      Slider
   </div>
 </template>
 
