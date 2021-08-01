@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    Emre Güzel'in Starter Pack'ı
+    O zaman Girişim Hayırlı Olsun
     <svg-sprite icon="alert" />
   </div>
 </template>
