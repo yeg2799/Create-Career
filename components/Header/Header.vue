@@ -1,55 +1,67 @@
 <template>
-  <div class="">
-      <Menu />
-            <div v-swiper:popularLocationsSlider="swiperOption" class="popular-locations__list">
-        <div slot="pagination" class="slider-pagination" data-popular-slider-pagination />
-        <div class="swiper-wrapper">
-          <div v-for="a in 5" :key="a.id" class="swiper-slide popular-locations-swiper-slide">
-            aaaa
-          </div>
-        </div>
+  <div class="header">
+    <div class="header_left">
+      <div class="header_left_logo">
+        <nuxt-link to="/">Anasayfa</nuxt-link>
       </div>
+      <div class="header_left_menu">
+          <Menu />
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header_right_profile">
+        <img :src="require('assets/images/avatar.jpg')" width="30" height="30" alt="profile" class="profile" />
+        <span>Emre</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Menu from '@/components/Header/Menu.vue'
+import Menu from '@/components/Header/Menu.vue';
 export default {
     components:{
         Menu
     },  
-    data() {
-    return {
-      swiperOption: {
-        slidesPerView: 3,
-        spaceBetween: 17,
-        autoplay: {
-          delay: 5000,
-        },
-        loop: true,
-        pagination: {
-          el: '[data-popular-slider-pagination]',
-          type: "bullets",
-          clickable: true,
-        },
-        breakpoints: {
-          992: {
-            slidesPerView: 3,
-          },
-          576: {
-            slidesPerView: 2,
-          },
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-          },
-        },
-      },
-    };
-  },
+
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.header{
+    width: 100%;
+    background: #efefef;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    //header_left
+    &_left{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_menu{
+          margin-left: 30px;
+        }
+    }
+    &_right{
+      &_profile{
+        width: 100%;
+        padding: 5px 15px 5px 5px;
+        border-radius: 18px;
+        cursor: pointer;
+        &:hover{
+           background: rgb(219, 212, 212);
+        }
+        img{
+          border-radius:50%;
+          margin-right: 8px;
+        }
+        span{
+          color: #6e6d7a;
+        }
+      }
+    }
+}
 </style>

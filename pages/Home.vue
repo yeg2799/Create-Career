@@ -1,12 +1,19 @@
 <template>
   <div class="home-page">
-    O zaman Girişim Hayırlı Olsun
-    <svg-sprite icon="alert" />
+    <Swiper />
+    <!-- <svg-sprite icon="alert" /> -->
+    <div class="container">
+      Anasayfa
+    </div>
   </div>
 </template>
 
 <script>
+import Swiper from '@/components/Swiper';
 export default {
+  components:{
+    Swiper
+  }
  }
 </script>
 <style lang="scss" scoped>
