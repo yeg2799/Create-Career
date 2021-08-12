@@ -45,14 +45,13 @@ export default {
 <style lang="scss" scoped>
 .menu_wrapper{
     display: flex
-
 }
 .menu_item{
     margin-right: 10px;
     padding: 2px 10px;
     border-radius: 5px;
     a:hover{
-    color: #776ec5;
+    color: #cebe79;
     }
     &:last-child{
         margin-right: 0;

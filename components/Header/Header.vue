@@ -8,10 +8,16 @@
           <Menu />
       </div>
     </div>
-    <div class="header-right">
-      <div class="header_right_profile">
+    <div class="header_right">
+      <div class="header_right_profile" v-if="false">
         <img :src="require('assets/images/avatar.jpg')" width="30" height="30" alt="profile" class="profile" />
         <span>Emre</span>
+      </div>
+      <div class="header_right_sign_in">
+        <nuxt-link to="/login">Giriş Yap</nuxt-link>
+      </div>
+      <div class="header_right_sign_up">
+        <nuxt-link to="/register">Kayıt Ol</nuxt-link>
       </div>
     </div>
   </div>
@@ -46,6 +52,8 @@ export default {
         }
     }
     &_right{
+      display: flex;
+      align-items: center;
       &_profile{
         width: 100%;
         padding: 5px 15px 5px 5px;
@@ -61,6 +69,17 @@ export default {
         span{
           color: #6e6d7a;
         }
+      }
+      &_sign_in{
+          margin-right: 10px;
+          cursor: pointer;
+      }
+      &_sign_up{	
+        cursor: pointer;
+        background: #cebe79;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
       }
     }
 }

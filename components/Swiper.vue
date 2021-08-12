@@ -1,11 +1,11 @@
 <template>
     <div v-swiper:popularLocationsSlider="swiperOption" class="popular-locations__list">
-        <div slot="pagination" class="slider-pagination" data-popular-slider-pagination />
         <div class="swiper-wrapper">
-          <div v-for="a in 5" :key="a.id" class="swiper-slide popular-locations-swiper-slide">
-            aaaa
+          <div v-for="picture in pictures" :key="picture.id" class="swiper-slide popular-locations-swiper-slide">
+            <img :src="require(`@/assets/images/${picture.title}.jpg`)" />
           </div>
         </div>
+        <div slot="pagination" class="slider-pagination" data-popular-slider-pagination />
       </div>
 </template>
 
@@ -13,6 +13,11 @@
 export default {
     data() {
     return {
+      pictures:[
+        {title:'photo9'},
+        {title:'photo10'},
+        {title:'photo11'}
+      ],
       swiperOption: {
         slidesPerView: 3,
         spaceBetween: 17,
@@ -25,24 +30,35 @@ export default {
           type: "bullets",
           clickable: true,
         },
-        breakpoints: {
-          992: {
-            slidesPerView: 3,
-          },
-          576: {
-            slidesPerView: 2,
-          },
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-          },
-        },
+        // breakpoints: {
+        //   992: {
+        //     slidesPerView: 3,
+        //   },
+        //   576: {
+        //     slidesPerView: 2,
+        //   },
+        //   320: {
+        //     slidesPerView: 1,
+        //     spaceBetween: 0,
+        //   },
+        // },
       },
     };
   },
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+img{
+    width: 100%;
+    height: 400px;
+}
+.slider-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  z-index: 9999;
+}
 </style>
