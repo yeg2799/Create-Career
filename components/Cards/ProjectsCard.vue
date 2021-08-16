@@ -9,7 +9,7 @@
             </div>
              <div class="card_profile">
                  <div class="card_profile_left">
-                        <div class="card_profile_img"><img :src="require('@/assets/images/avatar.jpg')"/></div>
+                        <div class="card_profile_img"><img :src="require('@/assets/images/avatar.jpg')" loading="lazy"/></div>
                         <div class="card_profile_title">Emre Güzel</div>
                  </div>
                 <div class="card_profile_right">

@@ -10,7 +10,7 @@
     </div>
     <div class="header_right">
       <div class="header_right_profile" v-if="false">
-        <img :src="require('assets/images/avatar.jpg')" width="30" height="30" alt="profile" class="profile" />
+        <img :src="require('assets/images/avatar.jpg')" width="30" height="30" alt="profile" class="profile" loading="lazy"/>
         <span>Emre</span>
       </div>
       <div class="header_right_sign_in">

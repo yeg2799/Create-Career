@@ -1,14 +1,46 @@
 <template>
   <div class="home_page">
     <Swiper />
-
     <div class="main_page">
         <div class="filter">
             <div class="dropdown">
                 <span>Popular</span>
                 <svg-sprite icon="dropdown" />
             </div>
+            <div class=filter_menu>
+                <span class="filter_menu_item active">All</span>
+                <span class="filter_menu_item">Animation</span>
+                <span class="filter_menu_item">Branding</span>
+                <span class="filter_menu_item">Illustration</span>
+                <span class="filter_menu_item">Mobile</span>
+                <span class="filter_menu_item">Print</span>
+                <span class="filter_menu_item">Product Design</span>
+                <span class="filter_menu_item">Web Design</span>
+            </div>
+            <div class="filter_dropdown" :class="isOpenFilterPopup? 'active_dropdown':''" @click="isOpenFilterPopup=!isOpenFilterPopup">
+              <span>Filters</span>
+            </div>
         </div>
+        <transition name="fade" >
+        <div class="popup_filter_menu" v-if="isOpenFilterPopup">
+          <div class="popup_filter_menu_item">
+            <span>Tags</span>
+            <input type="text" >
+          </div>
+          <div class="popup_filter_menu_item">
+            <span>Tags</span>
+            <input type="text" >
+          </div>
+          <div class="popup_filter_menu_item">
+            <span>Tags</span>
+            <input type="text" >
+          </div>
+          <div class="popup_filter_menu_item">
+            <span>Tags</span>
+            <input type="text" >
+          </div>
+        </div>
+        </transition>
         <ProjectsCard cardTitle="Popüler Projeler"/>
     </div>
   </div>
@@ -21,6 +53,11 @@ export default {
   components:{
     Swiper,
     ProjectsCard
+  },
+  data(){
+    return{
+      isOpenFilterPopup:false
+    }
   }
  }
 </script>
@@ -29,7 +66,37 @@ export default {
   background: #FFFFFF;
 }
 .filter{
-  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+  &_menu{
+    display: flex;
+    &_item{
+      cursor: pointer;
+      display: inline;
+      padding: 5px 20px;
+        &:hover{
+          color: #CEBE79;
+        }
+    }
+  }
+  .filter_dropdown{
+    cursor: pointer;
+    background: #e8e8e8;
+    padding: 10px 20px;
+    border-radius: 20px;
+  }
+  .active_dropdown{
+    background: #CEBE79;
+  }
+  .active{
+    background: #CEBE79;
+    border-radius: 20px;
+    color: #fff;
+  }
   .dropdown{
     border: 2px solid #e8e8e8;
     display: inline;
@@ -43,6 +110,30 @@ export default {
     }
     span{
       margin-right: 20px;
+    }
+  }
+}
+.popup_filter_menu{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &_item{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    span{
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    input{
+      border-radius: 10px;
+      padding: 10px;
+      background: #e8e8e8;
+      border: 1px solid #e8e8e8;
     }
   }
 }

@@ -28,7 +28,10 @@ export default {
     '~/plugins/component.js',
     { src: '~/plugins/swiper', ssr: false, defer: true },
   ],
-
+  server: {
+    port: 8000, // default: 3000
+    host: '0.0.0.0',
+  },
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -48,6 +51,32 @@ export default {
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    filenames: {
+      app: ({ isDev }) => (isDev ? '[name].js' : 'app.[contenthash].js'),
+      chunk: ({ isDev }) => (isDev ? '[name].js' : 'chunk.[contenthash].js'),
+      css: ({ isDev }) => (isDev ? '[name].css' : 'main.[contenthash].css'),
+      img: ({ isDev }) => (isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]'),
+      font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
+      video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]',
+    },
+
+    performance: {
+      hints: false,
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'async',
+        maxSize: 263168,
+      },
+    },
+    splitChunks: {
+      pages: true,
+      vendor: true,
+      commons: true,
+      runtime: true,
+      layouts: true,
+    },
+    
   },
   router: {
     trailingSlash: true,

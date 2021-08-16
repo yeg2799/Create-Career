@@ -2,7 +2,7 @@
     <div v-swiper:popularLocationsSlider="swiperOption" class="popular-locations__list">
         <div class="swiper-wrapper">
           <div v-for="picture in pictures" :key="picture.id" class="swiper-slide popular-locations-swiper-slide">
-            <img :src="require(`@/assets/images/${picture.title}.jpg`)" />
+            <img :src="require(`@/assets/images/${picture.title}.jpg`)" loading="lazy"/>
           </div>
         </div>
         <div slot="pagination" class="slider-pagination" data-popular-slider-pagination />
