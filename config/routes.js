@@ -15,4 +15,9 @@ export default[
         name: 'Register',
         component: resolve(__dirname, '../pages/auth/Register'),
     },
+    {
+        path: '/project-detail',
+        name: 'ProjectDetail',
+        component: resolve(__dirname, '../pages/ProjectDetail'),
+    },
 ]
