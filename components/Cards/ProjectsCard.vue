@@ -1,7 +1,7 @@
 <template>
   <div class="cards_wrapper">
       <h3 class="card_title" v-if="cardTitle">{{cardTitle}}</h3>
-      <div class="card_wrapper">
+    <nuxt-link to="/project-detail"  class="card_wrapper">
         <div class="card" v-for="picture in pictures" :key="picture.id">
             <div class="card_project_image">
                 <img :src="require(`@/assets/images/${picture.title}.jpg`)" />
@@ -24,7 +24,8 @@
                 </div>
              </div>
         </div>
-      </div>
+    </nuxt-link>
+    <div class="more_than_button">Daha fazlasını gör</div>
   </div>
 </template>
 
@@ -136,7 +137,21 @@ export default {
             }
         }
     }
+}
 
+.more_than_button{
+    margin-top: 30px;
+    background: #CEBE79;
+    color: #fff;
+    padding: 20px 50px;
+    border-radius: 40px;
+    border: 1px solid #CEBE79;
+    cursor: pointer;
+    &:hover{
+        background: #fff;
+        color: #CEBE79;
+        // border: 1px solid #CEBE79;
+    }
 }
 @keyframes fadein {
   from {

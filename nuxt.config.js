@@ -27,6 +27,7 @@ export default {
   plugins: [
     '~/plugins/component.js',
     { src: '~/plugins/swiper', ssr: false, defer: true },
+    { src: '~/plugins/vuecobra', ssr: false, defer: true },
   ],
   server: {
     port: 8000, // default: 3000

@@ -1,44 +1,44 @@
 <template>
   <div>
-              <div class="filter">
-            <div class="dropdown">
-                <span>Popular</span>
-                <svg-sprite icon="dropdown" />
-            </div>
-            <div class=filter_menu>
-                <span class="filter_menu_item active">All</span>
-                <span class="filter_menu_item">Animation</span>
-                <span class="filter_menu_item">Branding</span>
-                <span class="filter_menu_item">Illustration</span>
-                <span class="filter_menu_item">Mobile</span>
-                <span class="filter_menu_item">Print</span>
-                <span class="filter_menu_item">Product Design</span>
-                <span class="filter_menu_item">Web Design</span>
-            </div>
-            <div class="filter_dropdown" :class="isOpenFilterPopup? 'active_dropdown':''" @click="isOpenFilterPopup=!isOpenFilterPopup">
-              <span>Filters</span>
-            </div>
+    <div class="filter">
+        <div class="dropdown">
+            <span>Popular</span>
+            <svg-sprite icon="dropdown" />
         </div>
-        <transition name="fade" >
+        <div class=filter_menu>
+            <span class="filter_menu_item active">All</span>
+            <span class="filter_menu_item">Animation</span>
+            <span class="filter_menu_item">Branding</span>
+            <span class="filter_menu_item">Illustration</span>
+            <span class="filter_menu_item">Mobile</span>
+            <span class="filter_menu_item">Print</span>
+            <span class="filter_menu_item">Product Design</span>
+            <span class="filter_menu_item">Web Design</span>
+        </div>
+        <div class="filter_dropdown" :class="isOpenFilterPopup? 'active_dropdown':''" @click="isOpenFilterPopup=!isOpenFilterPopup">
+            <span>Filters</span>
+        </div>
+    </div>
+    <transition name="fade" >
         <div class="popup_filter_menu" v-if="isOpenFilterPopup">
-          <div class="popup_filter_menu_item">
-            <span>Tags</span>
-            <input type="text" >
-          </div>
-          <div class="popup_filter_menu_item">
-            <span>Tags</span>
-            <input type="text" >
-          </div>
-          <div class="popup_filter_menu_item">
-            <span>Tags</span>
-            <input type="text" >
-          </div>
-          <div class="popup_filter_menu_item">
-            <span>Tags</span>
-            <input type="text" >
-          </div>
+            <div class="popup_filter_menu_item">
+                <span>Tags</span>
+                <input type="text" >
+            </div>
+            <div class="popup_filter_menu_item">
+                <span>Tags</span>
+                <input type="text" >
+            </div>
+            <div class="popup_filter_menu_item">
+                <span>Tags</span>
+                <input type="text" >
+            </div>
+            <div class="popup_filter_menu_item">
+                <span>Tags</span>
+                <input type="text" >
+            </div>
         </div>
-        </transition>
+    </transition>
   </div>
 </template>
 

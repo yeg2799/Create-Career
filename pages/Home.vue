@@ -1,9 +1,10 @@
 <template>
   <div class="home_page">
-    <Swiper />
+        <Swiper />
     <div class="main_page">
         <HomeFilter />
         <ProjectsCard cardTitle="Popüler Projeler"/>
+        <PopularUsers />
     </div>
   </div>
 </template>
@@ -12,11 +13,13 @@
 import Swiper from '@/components/Swiper';
 import ProjectsCard from '../components/Cards/ProjectsCard.vue';
 import HomeFilter from '../components/Filter/HomeFilter.vue';
+import PopularUsers from '../components/PopularUsers.vue';
 export default {
   components:{
     Swiper,
     ProjectsCard,
-    HomeFilter
+    HomeFilter,
+    PopularUsers
   },
 
  }
@@ -31,4 +34,5 @@ export default {
   width: 100%;
   margin: 0 auto;
 }
+
 </style>
