@@ -20,6 +20,11 @@
           <div class="project_detail_cover">
               <img :src="require('@/assets/images/photo1.jpg')" alt="">
           </div>
+          <div class="project_detail_desc"> 
+              <span>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, enim et facilis laboriosam nulla inventore soluta placeat expedita ratione, alias ab obcaecati pariatur quidem sunt harum autem dolor. Totam, consectetur ad recusandae reiciendis animi nostrum incidunt ipsum laudantium repudiandae voluptatem, consequuntur quod aliquid eum itaque deserunt sapiente provident, alias natus autem. Obcaecati exercitationem saepe, reprehenderit repellendus adipisci sint voluptatum a neque itaque, labore magni iusto similique dolor ab quibusdam, libero cum nemo. Voluptas, voluptatem itaque! Dicta vel, delectus iure necessitatibus amet, nobis magnam autem facilis nulla ab, suscipit porro? Cumque a voluptatum dolore! Id earum quisquam deleniti nulla delectus aspernatur?
+              </span>
+          </div>
       </div>
   </div>
 </template>
@@ -35,12 +40,16 @@ export default {
     &_cover{
         width: 100%
     }
+    &_desc{
+        margin-top: 10px;
+    }
     img{
         width: 100%;
-        height: 400px;
+        height: 500px;
         border-radius: 10px;
     }
 }
+
 .project_detail_header{
     padding: 30px 100px;
     .project_detail_profile_header{

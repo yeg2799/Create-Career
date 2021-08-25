@@ -4,6 +4,9 @@
         <img src="@/assets/images/login.png" alt="">
       </div>
       <div class="login_page_right">
+          <div class="login_page_right_header">
+              <img src="@/assets/images/login4.png" alt="">
+         </div>
         <div class="login_page_right_box">
           <div class="login_page_right_box_form">
               <form>
@@ -43,8 +46,15 @@ export default {
   &_right{
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-top: 50px;
+    &_header{
+
+      img{
+        width: 500px;
+      }
+    }
     &_box{
       width: 400px;
       height: 300px;
