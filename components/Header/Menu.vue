@@ -13,27 +13,27 @@ export default {
             menus:[
                 {
                     id:1,
-                    name:"Inspiration",
+                    name:"İlham Al",
                     slug:"/inspiration"
                 },
                 {
                     id:2,
-                    name:"Find Work",
+                    name:"İş Bul",
                      slug:"/find-work"
                 },                
                 {
                     id:3,
-                    name:"Learn Design",
+                    name:"Tasarım Öğren",
                     slug:"/learn-design"
                 },
                 {
                     id:4,
-                    name:"Go Pro",
+                    name:"Profesyonel Ol",
                     slug:"/go-pro"
                 },
                 {
                     id:5,
-                    name:"Hire Designers",
+                    name:"Tasarımcı Bul",
                     slug:"/hire-designers"
                 }
             ]

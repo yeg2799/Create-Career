@@ -62,5 +62,14 @@ export default {
       padding: 20px;
     }
   }
+  .create_account_button{
+    border-color: #CEBE79;
+    width: 100%;
+    color: #fff;
+    background: #CEBE79;
+    &:focus{
+      border-color: #CEBE79;
+    }
+  }
 }
 </style>

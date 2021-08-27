@@ -30,22 +30,11 @@ export default {
           type: "bullets",
           clickable: true,
         },
-        // breakpoints: {
-        //   992: {
-        //     slidesPerView: 3,
-        //   },
-        //   576: {
-        //     slidesPerView: 2,
-        //   },
-        //   320: {
-        //     slidesPerView: 1,
-        //     spaceBetween: 0,
-        //   },
-        // },
       },
     };
   },
 }
+
 </script>
 
 <style lang="scss" scoped>
