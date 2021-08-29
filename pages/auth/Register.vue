@@ -4,38 +4,56 @@
         <img src="@/assets/images/login.png" alt="">
      </div>
      <div class="register_right">
+       <div class="register_right_header">
+           <h1>Hoşgeldiniz</h1>
+           <span>Hesabınıza giriş yaparak size sunulan ayrıcalıklardan anında faydalanabilirsiniz.</span>
+       </div>
        <div class="register_right_box">
           <div class="register_right_box_form">
               <form>
-                <Toggle value1="İş Arayan" value2="İş Veren" class="col-12 mb-4"/>
+                  <Toggle value1="İş Arayan" value2="İş Veren" class="col-12 mb-4"/>
                 <div class="d-flex justify-content-between">
-                <div class="mb-3 col-lg-6">
-                  <V-Input type="text" placeholder="Lütfen Adınızı Giriniz." label="Adı"/>
-                </div>
-                <div class="mb-3 col-lg-6">
-                  <V-Input type="text" placeholder="Lütfen Soyadınızı Giriniz" label="Soyadı"/>
-                </div>
+                  <div class="mb-3 col-lg-6">
+                      <V-Input type="text" 
+                      placeholder="Lütfen Adınızı Giriniz." 
+                      label="Adı"/>
+                  </div>
+                  <div class="mb-3 col-lg-6">
+                      <V-Input type="text" 
+                      placeholder="Lütfen Soyadınızı Giriniz" 
+                      label="Soyadı"/>
+                  </div>
                 </div>
                 <div class="mb-3 col-12">
-                  <V-Input type="email" placeholder="Lütfen E-Posta Adresinizi Giriniz" label="E-Posta"/>
+                    <V-Input type="email" 
+                    placeholder="Lütfen E-Posta Adresinizi Giriniz" 
+                    label="E-Posta"/>
                 </div>
                 <div class="mb-3 col-12">
-                    <V-Input type="phone" placeholder="Lütfen E-Posta Adresinizi Giriniz" label="Telefon Numarası"/>
+                    <V-Input type="phone" 
+                    placeholder="Lütfen E-Posta Adresinizi Giriniz" 
+                    label="Telefon Numarası"/>
                 </div>
                 <div class="d-flex justify-content-between">
                   <div class="mb-3 col-lg-6">
-                  <V-Input type="password" placeholder="Lütfen Şifrenizi Giriniz" label="Şifre" iconRight="eye"/>
-                </div>
+                    <V-Input type="password" 
+                    placeholder="Lütfen Şifrenizi Giriniz" 
+                    label="Şifre" 
+                    iconRight="eye"/>
+                  </div>
                 <div class="mb-3 col-lg-6">
-                  <V-Input type="password" placeholder="Lütfen Şifrenizi Tekrar Giriniz" label="Şifre Tekrar" iconRight="eye"/>
+                    <V-Input type="password" 
+                    placeholder="Lütfen Şifrenizi Tekrar Giriniz" 
+                    label="Şifre Tekrar" 
+                    iconRight="eye"/>
                 </div>
                 </div>
-                <div class="col-12">
-                  <button type="submit" class="btn create_account_button" >Kayıt Ol</button>
-                </div>
-                <div class="is_there_account col-12">
-                  <span>Zaten bir hesabınız var mı?</span><nuxt-link to="/login">Hemen giriş yapın.</nuxt-link>
-                </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn create_account_button" >Kayıt Ol</button>
+                    </div>
+                    <div class="is_there_account col-12">
+                      <span>Zaten bir hesabınız var mı?</span><nuxt-link to="/login">Hemen giriş yapın.</nuxt-link>
+                    </div>
               </form>
           </div>
        </div>
@@ -68,12 +86,15 @@ export default {
   background: #f5d4d4;
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  &_header{
+    width: 100%;
+    padding: 20px;
+  }
   &_box{
-    width: 700px;
-    // border: 1px solid #efefef;
-    // background: #efefef;
+   width: 100%;
     &_form{
       padding: 20px;
     }
