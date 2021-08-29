@@ -38,6 +38,6 @@ span{
 
 }
 .active{
-    color:#DB62A0;
+    color:#730a0a;
 }
 </style>

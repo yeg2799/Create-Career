@@ -7,39 +7,33 @@
        <div class="register_right_box">
           <div class="register_right_box_form">
               <form>
-                <Toggle value1="İş Veren" value2="İş Arayan"/>
-                <div class="d-flex">
-                  <div class="mb-3">
-                  <label >Adı</label>
-                  <!-- <input type="text" class="form-control" placeholder="Lütfen Adınızı Giriniz"> -->
-                  <V-Input type="text" placeholder="Lütfen Adınızı Giriniz."/>
+                <Toggle value1="İş Arayan" value2="İş Veren" class="col-12 mb-4"/>
+                <div class="d-flex justify-content-between">
+                <div class="mb-3 col-lg-6">
+                  <V-Input type="text" placeholder="Lütfen Adınızı Giriniz." label="Adı"/>
                 </div>
-                <div class="mb-3 ml-3">
-                  <label >Soyadı</label>
-                  <input type="text" class="form-control" placeholder="Lütfen Soyadınızı Giriniz">
+                <div class="mb-3 col-lg-6">
+                  <V-Input type="text" placeholder="Lütfen Soyadınızı Giriniz" label="Soyadı"/>
                 </div>
                 </div>
-                <div class="mb-3">
-                  <label >E-Posta</label>
-                  <input type="email" class="form-control" placeholder="Lütfen E-posta adresinizi giriniz">
+                <div class="mb-3 col-12">
+                  <V-Input type="email" placeholder="Lütfen E-Posta Adresinizi Giriniz" label="E-Posta"/>
                 </div>
-                <div class="mb-3">
-                  <label >Telefon</label>
-                  <vue-tel-input v-model="phone" placeholder="Telefon numaranızı giriniz"></vue-tel-input>
+                <div class="mb-3 col-12">
+                    <V-Input type="phone" placeholder="Lütfen E-Posta Adresinizi Giriniz" label="Telefon Numarası"/>
                 </div>
-                <div class="d-flex">
-                  <div class="mb-3">
-                  <label >Şifre</label>
-                  <input type="password" class="form-control" placeholder="Lütfen parolanızı giriniz">
+                <div class="d-flex justify-content-between">
+                  <div class="mb-3 col-lg-6">
+                  <V-Input type="password" placeholder="Lütfen Şifrenizi Giriniz" label="Şifre" iconRight="eye"/>
                 </div>
-                <div class="mb-3 ml-3">
-                  <label>Şifre Tekrar</label>
-                  <input type="password" class="form-control" placeholder="Lütfen şifrenizi tekrar giriniz">
+                <div class="mb-3 col-lg-6">
+                  <V-Input type="password" placeholder="Lütfen Şifrenizi Tekrar Giriniz" label="Şifre Tekrar" iconRight="eye"/>
                 </div>
                 </div>
-
-                <button type="submit" class="btn create_account_button">Kayıt Ol</button>
-                <div class="is_there_account">
+                <div class="col-12">
+                  <button type="submit" class="btn create_account_button" >Kayıt Ol</button>
+                </div>
+                <div class="is_there_account col-12">
                   <span>Zaten bir hesabınız var mı?</span><nuxt-link to="/login">Hemen giriş yapın.</nuxt-link>
                 </div>
               </form>
@@ -77,7 +71,7 @@ export default {
   align-items: center;
   justify-content: center;
   &_box{
-    width: 500px;
+    width: 700px;
     // border: 1px solid #efefef;
     // background: #efefef;
     &_form{
@@ -95,7 +89,6 @@ export default {
   }
   .is_there_account{
     margin: 20px 0px;
-    float: right;
     a{
      padding-left: 5px;
      color: #E367A7;
