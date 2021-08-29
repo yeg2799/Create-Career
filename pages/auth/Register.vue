@@ -24,7 +24,7 @@
                 </div>
                 <div class="mb-3">
                   <label >Telefon</label>
-                  <input type="tel" class="form-control" placeholder="Bir numara giriniz">
+                  <vue-tel-input v-model="phone" placeholder="Telefon numaranızı giriniz"></vue-tel-input>
                 </div>
                 <div class="d-flex">
                   <div class="mb-3">
