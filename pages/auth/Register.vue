@@ -11,7 +11,8 @@
                 <div class="d-flex">
                   <div class="mb-3">
                   <label >Adı</label>
-                  <input type="text" class="form-control" placeholder="Lütfen Adınızı Giriniz">
+                  <!-- <input type="text" class="form-control" placeholder="Lütfen Adınızı Giriniz"> -->
+                  <V-Input type="text" placeholder="Lütfen Adınızı Giriniz."/>
                 </div>
                 <div class="mb-3 ml-3">
                   <label >Soyadı</label>

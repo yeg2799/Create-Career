@@ -7,6 +7,10 @@
           <!-- <div class="login_page_right_header">
               <img src="@/assets/images/login4.png" alt="">
          </div> -->
+         <div class="">
+           <h1>Hoşgeldiniz</h1>
+           <span>Hesabınıza giriş yaparak size sunulan ayrıcalıklardan anında faydalanabilirsiniz.</span>
+         </div>
         <div class="login_page_right_box">
           <div class="login_page_right_box_form">
               <form>
@@ -62,12 +66,12 @@ export default {
       }
     }
     &_box{
-      width: 400px;
-      height: 300px;
+      width: 500px;
+    
       &_form{
-        padding: 20px;
         input{
-          font-size: 14px;
+          font-size: 12px;
+          padding: 20px;
         }
         button{
           width: 100%;
