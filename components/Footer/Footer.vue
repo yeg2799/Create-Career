@@ -1,7 +1,7 @@
 <template>
   <div class="footer_wrapper">
     <div class="footer">
-            Footerrrr
+          Tüm hakkı saklıdır
     </div>
 
   </div>

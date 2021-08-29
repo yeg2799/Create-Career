@@ -77,9 +77,11 @@ export default {
       &_sign_up{	
         cursor: pointer;
         background: #cebe79;
-        color: white;
         padding: 10px 20px;
         border-radius: 5px;
+        a{
+          color: white;
+        }
       }
     }
 }

@@ -25,4 +25,9 @@ export default[
         name: 'ProjectDetail',
         component: resolve(__dirname, '../pages/ProjectDetail'),
     },
+    {
+        path: '/:slug',
+        name: 'ProjectsPage',
+        component: resolve(__dirname, '../pages/ProjectsPage'),
+    },
 ]

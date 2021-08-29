@@ -25,6 +25,11 @@
                   </div>
                 </div>
                 <div class="mb-3 col-12">
+                    <V-Input type="text" 
+                    placeholder="Lütfen Firma İsminizi Giriniz" 
+                    label="Firma Adı"/>
+                </div>
+                <div class="mb-3 col-12">
                     <V-Input type="email" 
                     placeholder="Lütfen E-Posta Adresinizi Giriniz" 
                     label="E-Posta"/>
@@ -49,7 +54,7 @@
                 </div>
                 </div>
                     <div class="col-12">
-                      <button type="submit" class="btn create_account_button" >Kayıt Ol</button>
+                      <button type="submit" class="btn create_account_button">Kayıt Ol</button>
                     </div>
                     <div class="is_there_account col-12">
                       <span>Zaten bir hesabınız var mı?</span><nuxt-link to="/login">Hemen giriş yapın.</nuxt-link>
@@ -87,8 +92,7 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding-top: 30px;
   &_header{
     width: 100%;
     padding: 20px;
