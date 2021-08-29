@@ -16,7 +16,7 @@
                   </div>
                   <div class="project_detail_profile_header_right">
                     <div class="favorite_button button">
-                        Favori
+                        <SvgSprite icon="like" />
                     </div>
                     <div class="save_button button">
                         Kaydet
@@ -33,6 +33,11 @@
               <span>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, enim et facilis laboriosam nulla inventore soluta placeat expedita ratione, alias ab obcaecati pariatur quidem sunt harum autem dolor. Totam, consectetur ad recusandae reiciendis animi nostrum incidunt ipsum laudantium repudiandae voluptatem, consequuntur quod aliquid eum itaque deserunt sapiente provident, alias natus autem. Obcaecati exercitationem saepe, reprehenderit repellendus adipisci sint voluptatum a neque itaque, labore magni iusto similique dolor ab quibusdam, libero cum nemo. Voluptas, voluptatem itaque! Dicta vel, delectus iure necessitatibus amet, nobis magnam autem facilis nulla ab, suscipit porro? Cumque a voluptatum dolore! Id earum quisquam deleniti nulla delectus aspernatur?
               </span>
+          </div>
+          <div class="line">
+              <hr>
+              <span>Yunus Emre Güzel</span>
+              <hr>
           </div>
       </div>
   </div>
@@ -79,7 +84,6 @@ export default {
             margin-right: 10px;
             border-radius: 5px;
             cursor: pointer;
-
             &:hover{
                 background-color: #cebe79;
                 color: #fff;
@@ -119,11 +123,27 @@ export default {
             }
         }
     }
-        }
-
     }
-
+    }
 }
 }
-
+.project_detail_desc{
+    margin-top: 20px;
+    padding: 0 10px;
+}
+.line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    hr{
+        width: 40%;
+        border-color:#cebe79;
+    }
+    span{
+        width: 20%;
+        text-align: center;
+        color: #cebe79;
+    }
+}
 </style>-

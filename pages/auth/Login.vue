@@ -12,14 +12,19 @@
               <form>
                 <div class="mb-3">
                   <input type="email" class="form-control" placeholder="Lütfen E-Posta adresinizi giriniz">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  <div id="emailHelp" class="form-text">Asla bilgilerinizi 3. bir kişiyle paylaşmayız.</div>
                 </div>
                 <div class="mb-3">
                   <input type="password" class="form-control" placeholder="Lütfen şifrenizi giriniz">
                 </div>
-                <button type="submit" class="btn">Giriş Yap</button>
-                <nuxt-link to="/forget-password">Şifreni mi unuttun</nuxt-link>
-                <button type="submit" class="btn create_account_button"> Yeni Hesap Oluştur</button>
+                <div class="d-flex flex-column">
+                  <button type="submit" class="btn">Giriş Yap</button>
+                  <nuxt-link to="/forget-password" class="forget_password">Şifreni mi unuttun</nuxt-link>
+                  <div class="isnot_there_account">
+                    <span>Bir Hesabınız yok mu?</span> <nuxt-link to="/register" class="create_account">Hemen ücretsiz kayıt olun.</nuxt-link>
+                  </div>
+                </div>
+
               </form>
           </div>
         </div>
@@ -49,7 +54,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    background: #f5d4d4;
     &_header{
 
       img{
@@ -59,9 +64,6 @@ export default {
     &_box{
       width: 400px;
       height: 300px;
-      background: #EFEFEF;
-      border: 1px solid #EFEFEF;
-      border-radius: 10px;
       &_form{
         padding: 20px;
         input{
@@ -73,10 +75,14 @@ export default {
           border-color: #CEBE79;
           color: #fff;
         }
-        .create_account_button{
-          background: #EFEFEF;
-          color: #CEBE79;
-          margin-top: 20px;
+        .forget_password{
+          color: #E367A7;
+          padding: 10px 0px;
+        }
+        .isnot_there_account{
+          a{
+            color: #E367A7;
+          }
         }
       }
     }
