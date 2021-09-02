@@ -1,6 +1,6 @@
 <template>
   <div class="user_profile">
-      <div class="container">
+      <div class="">
         <div class="user_profile_cover">
             <div class="user_profile_banner">
                 <img :src="require('@/assets/images/photo10.jpg')" alt="">
@@ -15,29 +15,24 @@
               <hr>
         </div>
         <div class="user_profile_infos">
-            <div class="user_profile_info">
-                <span>Şehir:</span>
-                <span>Adana</span>
+            <div class="box">
+              <div class="user_profile_info">
+                <h3>Eğitim</h3>
+                <div class="">
+                </div>
             </div>
-            <div class="user_profile_info">
-                <span>Şehir:</span>
-                <span>Adana</span>
             </div>
-            <div class="user_profile_info">
-                <span>Şehir:</span>
-                <span>Adana</span>
+            <div class="box">
+                <div class="user_profile_info">
+                    <h3>Eğitim</h3>
+                    <div class=""></div>
+                </div>
             </div>
-            <div class="user_profile_info">
-                <span>Şehir:</span>
-                <span>Adana</span>
-            </div>
-            <div class="user_profile_info">
-                <span>Şehir:</span>
-                <span>Adana</span>
-            </div>
-            <div class="user_profile_info">
-                <span>Şehir:</span>
-                <span>Adana</span>
+            <div class="box">
+                <div class="user_profile_info">
+                    <h3>Eğitim</h3>
+                    <div class=""></div>
+                </div>
             </div>
         </div>
         <ProjectsCard cardTitle="Projelerim" />
@@ -57,6 +52,7 @@ export default {
 <style lang="scss" scoped>
 .user_profile{
     background: #fff;
+    padding: 0 300px;
 }
 .user_profile_cover{
     position: relative;
@@ -120,10 +116,18 @@ export default {
     }
     .user_profile_infos{
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
         border: 1px solid #CEBE79;
         border-width: 0 2px 2px 2px;
         height: 250px;  
         position: relative;
         top: -18px;
+        .user_profile_info{
+            display: flex;
+            flex-direction: column;
+
+        }
     }
 </style>
