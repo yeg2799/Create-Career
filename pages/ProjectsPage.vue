@@ -16,6 +16,17 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.projects_wrapper{
+  margin-top: 20px;
+}
+.project_title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .cards_wrapper{
+    margin-top: 0;
+  }
+}
 </style>
