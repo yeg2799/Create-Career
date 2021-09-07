@@ -2,7 +2,7 @@
     <div class="popular_users_part">
           <h3>Popüler Kullanıcılar</h3>
           <div class="popular_users_wrapper">
-            <div class="popular_users"  v-for="user in userInfos" :key="user.id">
+            <nuxt-link  v-for="user in userInfos" :key="user.id" :to="{ name:'UserProfile', params:{slug:user.slug}}"  class="popular_users" >
             <div class="popular_users_header">
                 <img :src="require(`@/assets/images/${user.imageUrl}.jpg`)" alt="">
             </div>
@@ -14,11 +14,12 @@
                       <SvgSprite :icon="social.icon" /> 
                     </a>
                   </div>
-
                 </div>
-            </div>
+              </div>
+            </nuxt-link>
         </div>
           </div>
+          
         </div>
 </template>
 
@@ -31,6 +32,7 @@ export default {
           id:0,
           imageUrl:'photo8',
           userName:'Yunus Emre Güzel',
+          slug:'emre-guzel',
           socialMediaAccounts:[
 
             {
@@ -50,7 +52,157 @@ export default {
               icon:'twitter',
             }
           ]
-        }
+        },
+        {
+          id:1,
+          imageUrl:'photo7',
+          userName:'Yunus Emre Güzel',
+           slug:'emre-guzel',
+          socialMediaAccounts:[
+
+            {
+              url:'https://www.linkedin.com/in/emre-g%C3%BCzel-6bb4101a2/',
+              icon:'linkedin',
+            },
+            {
+              url:'https://www.facebook.com/emre.guzel.3386/',
+              icon:'facebook',
+            },
+                        {
+              url:'https://www.instagram.com/_emrguzel_/',
+              icon:'instagram',
+            },
+            {
+              url:'https://twitter.com/emrex99',
+              icon:'twitter',
+            }
+          ]
+        },        
+        {
+          id:3,
+          imageUrl:'photo6',
+          userName:'Yunus Emre Güzel',
+           slug:'emre-guzel',
+          socialMediaAccounts:[
+
+            {
+              url:'https://www.linkedin.com/in/emre-g%C3%BCzel-6bb4101a2/',
+              icon:'linkedin',
+            },
+            {
+              url:'https://www.facebook.com/emre.guzel.3386/',
+              icon:'facebook',
+            },
+                        {
+              url:'https://www.instagram.com/_emrguzel_/',
+              icon:'instagram',
+            },
+            {
+              url:'https://twitter.com/emrex99',
+              icon:'twitter',
+            }
+          ]
+        },
+        {
+          id:4,
+          imageUrl:'photo5',
+          userName:'Yunus Emre Güzel',
+           slug:'emre-guzel',
+          socialMediaAccounts:[
+
+            {
+              url:'https://www.linkedin.com/in/emre-g%C3%BCzel-6bb4101a2/',
+              icon:'linkedin',
+            },
+            {
+              url:'https://www.facebook.com/emre.guzel.3386/',
+              icon:'facebook',
+            },
+                        {
+              url:'https://www.instagram.com/_emrguzel_/',
+              icon:'instagram',
+            },
+            {
+              url:'https://twitter.com/emrex99',
+              icon:'twitter',
+            }
+          ]
+        },
+        {
+          id:5,
+          imageUrl:'photo4',
+          userName:'Yunus Emre Güzel',
+           slug:'emre-guzel',
+          socialMediaAccounts:[
+
+            {
+              url:'https://www.linkedin.com/in/emre-g%C3%BCzel-6bb4101a2/',
+              icon:'linkedin',
+            },
+            {
+              url:'https://www.facebook.com/emre.guzel.3386/',
+              icon:'facebook',
+            },
+                        {
+              url:'https://www.instagram.com/_emrguzel_/',
+              icon:'instagram',
+            },
+            {
+              url:'https://twitter.com/emrex99',
+              icon:'twitter',
+            }
+          ]
+        },
+        {
+          id:6,
+          imageUrl:'photo3',
+          userName:'Yunus Emre Güzel',
+          slug:'emre-guzel',
+          socialMediaAccounts:[
+
+            {
+              url:'https://www.linkedin.com/in/emre-g%C3%BCzel-6bb4101a2/',
+              icon:'linkedin',
+            },
+            {
+              url:'https://www.facebook.com/emre.guzel.3386/',
+              icon:'facebook',
+            },
+                        {
+              url:'https://www.instagram.com/_emrguzel_/',
+              icon:'instagram',
+            },
+            {
+              url:'https://twitter.com/emrex99',
+              icon:'twitter',
+            }
+          ]
+        },
+        {
+          id:7,
+          imageUrl:'photo2',
+          userName:'Yunus Emre Güzel',
+          slug:'emre-guzel',
+          socialMediaAccounts:[
+
+            {
+              url:'https://www.linkedin.com/in/emre-g%C3%BCzel-6bb4101a2/',
+              icon:'linkedin',
+            },
+            {
+              url:'https://www.facebook.com/emre.guzel.3386/',
+              icon:'facebook',
+            },
+                        {
+              url:'https://www.instagram.com/_emrguzel_/',
+              icon:'instagram',
+            },
+            {
+              url:'https://twitter.com/emrex99',
+              icon:'twitter',
+            }
+          ]
+        },
       ]
     }
   }

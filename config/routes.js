@@ -16,7 +16,7 @@ export default[
         component: resolve(__dirname, '../pages/auth/Register'),
     },
     {
-        path: '/user-profile',
+        path: '/user/:slug',
         name: 'UserProfile',
         component: resolve(__dirname, '../pages/user/UserProfile'),
     },
