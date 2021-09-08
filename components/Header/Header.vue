@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" :class="$route.name==='UserProfile' ? 'user-profile-header':''">
     <div class="header_left">
       <div class="header_left_logo">
         <nuxt-link to="/">Anasayfa</nuxt-link>
@@ -34,14 +34,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .header{
     width: 100%;
+    // height: 300px;
+
     background: #efefef;
     font-size: 16px;
     font-weight: 400;
     padding: 20px 30px;
     display: flex;
     justify-content: space-between;
+    
     //header_left
     &_left{
         display: flex;
@@ -72,7 +76,7 @@ export default {
       }
       &_sign_in{
           margin-right: 10px;
-          cursor: pointer;
+        cursor: pointer;
       }
       &_sign_up{	
         cursor: pointer;
@@ -84,5 +88,11 @@ export default {
         }
       }
     }
+}
+.user-profile-header{
+  position: relative;
+  height: 450px;
+  background-image: url('@/assets/images/photo3.jpg');
+  align-items: flex-start;
 }
 </style>

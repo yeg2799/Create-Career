@@ -44,7 +44,8 @@ export default {
 
 <style lang="scss" scoped>
 .menu_wrapper{
-    display: flex
+    display: flex;
+    
 }
 .menu_item{
     margin-right: 10px;

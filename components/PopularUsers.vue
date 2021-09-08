@@ -9,7 +9,7 @@
             <div class="popular_users_infos">
                 <span class="popular_users_infos_name">{{user.userName}}</span>
                 <div class="popular_users_infos_accounts" >
-                  <div class="popular_users_infos_accounts" v-for="social in user.socialMediaAccounts" :key="social">
+                  <div class="popular_users_infos_accounts" v-for="social in user.socialMediaAccounts" :key="social.id">
                     <a :href="social.url" class="icon_wrapper" target="_blank">
                       <SvgSprite :icon="social.icon" /> 
                     </a>
@@ -156,23 +156,27 @@ export default {
         {
           id:6,
           imageUrl:'photo3',
-          userName:'Yunus Emre Güzel',
-          slug:'emre-guzel',
+          userName:'Berat Güzel',
+          slug:'berat-guzel',
           socialMediaAccounts:[
 
             {
+              id:0,
               url:'https://www.linkedin.com/in/emre-g%C3%BCzel-6bb4101a2/',
               icon:'linkedin',
             },
             {
+              id:1,
               url:'https://www.facebook.com/emre.guzel.3386/',
               icon:'facebook',
             },
-                        {
+            {
+              id:2,
               url:'https://www.instagram.com/_emrguzel_/',
               icon:'instagram',
             },
             {
+              id:3,
               url:'https://twitter.com/emrex99',
               icon:'twitter',
             }
