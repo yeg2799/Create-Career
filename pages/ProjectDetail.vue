@@ -39,12 +39,18 @@
               <span>Yunus Emre Güzel</span>
               <hr>
           </div>
+
       </div>
+      <!-- <div class="other_projects">
+              <projects-card />
+      </div> -->
   </div>
 </template>
 
 <script>
+import ProjectsCard from '../components/Cards/ProjectsCard.vue'
 export default {
+  components: { ProjectsCard },
 
 }
 </script>
@@ -97,11 +103,12 @@ export default {
         width: 45px;
         height: 45px;
         border-radius: 50%;
-        margin-right: 5px;
+        margin-right: 15px;
     }
     .project_detail_profile_titles{
         display: flex;
         flex-direction: column;
+
         .project_detail_profile_alt_titles{
             display: flex;
             align-items: center;
@@ -130,6 +137,7 @@ export default {
 .project_detail_desc{
     margin-top: 20px;
     padding: 0 10px;
+    text-align: justify;
 }
 .line{
     display: flex;
@@ -144,6 +152,8 @@ export default {
         width: 20%;
         text-align: center;
         color: #cebe79;
+        border-right: 1px solid #cebe79;
+        border-left: 1px solid #cebe79;
     }
-}
+    }
 </style>-

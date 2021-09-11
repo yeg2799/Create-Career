@@ -4,8 +4,8 @@
       <div class="header_left_logo">
         <nuxt-link to="/">Anasayfa</nuxt-link>
       </div>
-      <div class="header_left_menu">
-          <Menu />
+      <div class="header_left_menu" >
+           <Menu />
       </div>
     </div>
     <div class="header_right">
@@ -20,12 +20,17 @@
         <nuxt-link to="/register">Kayıt Ol</nuxt-link>
       </div>
     </div>
+    <div class="header_right_mobile">
+       <SvgSprite icon="hamburger" />
+    </div>
   </div>
 </template>
 
 <script>
 import Menu from '@/components/Header/Menu.vue';
+import { isMobileControl } from '@/mixins/isMobile.js';
 export default {
+    mixins:[isMobileControl],
     components:{
         Menu
     },  
@@ -34,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import "@/assets/variables/_breakpoints";
 .header{
     width: 100%;
     // height: 300px;
@@ -58,6 +63,20 @@ export default {
     &_right{
       display: flex;
       align-items: center;
+      @include bp(tablet){
+        display: none;
+      }
+      &_mobile{
+        display: none;
+        cursor: pointer;
+        svg{
+          width: 25px;
+          height: 25px;
+        }
+        @include bp(tablet){
+          display: block;
+        }
+      }
       &_profile{
         width: 100%;
         padding: 5px 15px 5px 5px;
@@ -92,7 +111,7 @@ export default {
 .user-profile-header{
   position: relative;
   height: 450px;
-  background-image: url('@/assets/images/photo3.jpg');
+  background-image: url('@/assets/images/photo11.jpg');
   align-items: flex-start;
 }
 </style>

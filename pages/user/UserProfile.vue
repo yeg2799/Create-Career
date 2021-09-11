@@ -78,29 +78,9 @@
                         </div>
                     </div>
                     <div class="user_profile_box_menu_wrapper">
-                        <div class="user_profile_box_menu_item">
-                            <SvgSprite icon="alert"/>
-                            <span> Activity Feed </span>
-                        </div>
-                        <div class="user_profile_box_menu_item">
-                            <SvgSprite icon="alert"/>
-                            <span> Activity Feed </span>
-                        </div>
-                        <div class="user_profile_box_menu_item">
-                            <SvgSprite icon="alert"/>
-                            <span> Activity Feed </span>
-                        </div>
-                        <div class="user_profile_box_menu_item active">
-                            <SvgSprite icon="alert"/>
-                            <span> Projelerim </span>
-                        </div>
-                        <div class="user_profile_box_menu_item">
-                            <SvgSprite icon="alert"/>
-                            <span> Activity Feed </span>
-                        </div>
-                        <div class="user_profile_box_menu_item">
-                            <SvgSprite icon="alert"/>
-                            <span> Activity Feed </span>
+                        <div v-for="menu in tabMenu" :key="menu.id" class="user_profile_box_menu_item" :class="menu.active ? 'active':''" @click="changeMenu(menu)">
+                            <SvgSprite :icon="menu.icon"/>
+                            <span> {{menu.title}} </span>
                         </div>
                     </div>
                     <div>
@@ -110,7 +90,21 @@
             </div>
             <div class="col-8 user_infos_box_wrapper">
                 <div class="user_infox_box">
-                    Bilgi Kutusu
+                    <div class="box" v-if="activeId===0">
+                        Bilgilerim
+                    </div>
+                    <div class="box" v-if="activeId===1">
+                        Bağlantılarım
+                    </div>
+                    <div class="box" v-if="activeId===2">
+                        Projelerim
+                    </div>
+                    <div class="box" v-if="activeId===3">
+                        Arşiv
+                    </div>
+                     <div class="box" v-if="activeId===4">
+                         Profil Ayarlarım
+                    </div>
                 </div>
             </div>
         </div>
@@ -122,9 +116,59 @@ import ProjectsCard from '@/components/Cards/ProjectsCard.vue'
 
 export default {
   components: { ProjectsCard },
-
+  data(){
+      return{
+          tabMenu:[
+            {
+                id:0,
+                icon:'alert',
+                title:'Bilgilerim',
+                active:true,
+            },
+            {
+                id:1,
+                icon:'alert',
+                title:'Bağlantılarım',
+                active:false,
+            },
+            {
+                id:2,
+                icon:'alert',
+                title:'Projelerim',
+                active:false,
+            },
+            {
+                id:3,
+                icon:'alert',
+                title:'Arşiv',
+                active:false,
+            },
+            {
+                id:4,
+                icon:'alert',
+                title:'Profil Ayarlarım',
+                active:false,
+            }
+          ],
+          activeId:0
+      }
+  },
+  methods:{
+    changeMenu(element){
+        this.tabMenu.forEach(el=>{
+            if(el.active===true){
+                el.active=false;
+            }
+            if(el.id===element.id){
+                el.active=true;
+                this.activeId=element.id;
+            }
+        })
+    }
+  }
 }
 </script>
+
 
 <style lang="scss" scoped>
 .user_profile_wrapper{
@@ -228,9 +272,9 @@ export default {
             border-radius: 7px;
             color: #fff;
             z-index: 7;
-            width: 63%;
-            position: absolute;
-            right: -10px;
+            width: 105%;
+            position: relative;
+            right: 10px;
             padding: 10px 30px;
         }
     }
@@ -255,6 +299,7 @@ export default {
     position: relative;
     top: -280px;
     width: 100%;
+    min-height: 1000px;
     // background: #fff;
     // padding: 0 300px;
 }

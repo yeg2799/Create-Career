@@ -29,5 +29,7 @@ components:{
 </script>
 
 <style>
-
+/* .default_layout{
+  overflow: hidden;
+} */
 </style>

@@ -43,6 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables/_breakpoints";
 .menu_wrapper{
     display: flex;
     
@@ -51,6 +52,9 @@ export default {
     margin-right: 10px;
     padding: 2px 10px;
     border-radius: 5px;
+    @include bp(tablet){
+        display: none;
+    }
     a:hover{
     color: #cebe79;
     }

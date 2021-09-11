@@ -1,11 +1,13 @@
 <template>
     <div class="popular_users_part">
           <h3>Popüler Kullanıcılar</h3>
-          <div class="popular_users_wrapper">
-            <nuxt-link  v-for="user in userInfos" :key="user.id" :to="{ name:'UserProfile', params:{slug:user.slug}}"  class="popular_users" >
+          <div class="popular_users_wrapper"  >
+            <div class="popular_users"  v-for="user in userInfos" :key="user.id">
+                <nuxt-link  :to="{ name:'UserProfile', params:{slug:user.slug}}"  >
             <div class="popular_users_header">
                 <img :src="require(`@/assets/images/${user.imageUrl}.jpg`)" alt="">
             </div>
+            </nuxt-link>
             <div class="popular_users_infos">
                 <span class="popular_users_infos_name">{{user.userName}}</span>
                 <div class="popular_users_infos_accounts" >
@@ -16,11 +18,9 @@
                   </div>
                 </div>
               </div>
-            </nuxt-link>
+            </div>
         </div>
-          </div>
-          
-        </div>
+      </div>
 </template>
 
 <script>
