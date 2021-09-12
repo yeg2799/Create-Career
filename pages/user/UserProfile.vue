@@ -93,8 +93,31 @@
                     <div class="box" v-if="activeId===0">
                         Bilgilerim
                     </div>
-                    <div class="box" v-if="activeId===1">
-                        Bağlantılarım
+                    <div class="connections box" v-if="activeId===1">
+                        <b-card no-body>
+                            <b-tabs card>
+                                <b-tab title="Following" active>
+                                    <div class="following_box">
+                                        <div class="d-flex align-items-center">
+                                            <div class="following_box_image">
+                                            <img :src="require('@/assets/images/avatar.jpg')" alt="" srcset="">
+                                        </div>
+                                        <div class="following_box_titles">
+                                            <span class="user_name">Berat Güzel</span>
+                                            <span class="follower_Count">2523 Takipçi</span>
+                                        </div>
+                                        <div>
+                                            Takibi Bırak
+                                        </div>
+                                        </div>
+
+                                    </div>
+                                </b-tab>
+                                <b-tab title="Follower">
+                                    <b-card-text>Tab contents 2</b-card-text>
+                                </b-tab>
+                            </b-tabs>
+                        </b-card>
                     </div>
                     <div class="box" v-if="activeId===2">
                         Projelerim
@@ -380,6 +403,29 @@ export default {
                 float: left;
             }
 
+        }
+    }
+
+    .connections{
+        .following_box{
+            display: flex;
+            .following_box_image{
+                img{
+                    width: 75px;
+                    height: 75pxpx;
+                }
+            }
+            .following_box_titles{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-left: 10px;
+                .user_name{
+                    font-size: 18px;
+                    font-weight: 600px;
+                }
+
+            }
         }
     }
 </style>

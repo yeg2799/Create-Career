@@ -1,5 +1,10 @@
 <template>
   <div class="header" :class="$route.name==='UserProfile' ? 'user-profile-header':''">
+    <div class="menu_mobile" v-if="isOpenMenu">
+          <div>
+            Mobile
+          </div>
+    </div>
     <div class="header_left">
       <div class="header_left_logo">
         <nuxt-link to="/">Anasayfa</nuxt-link>
@@ -20,7 +25,7 @@
         <nuxt-link to="/register">Kayıt Ol</nuxt-link>
       </div>
     </div>
-    <div class="header_right_mobile">
+    <div class="header_right_mobile" @click="isOpenMenu=!isOpenMenu">
        <SvgSprite icon="hamburger" />
     </div>
   </div>
@@ -31,6 +36,11 @@ import Menu from '@/components/Header/Menu.vue';
 import { isMobileControl } from '@/mixins/isMobile.js';
 export default {
     mixins:[isMobileControl],
+    data(){
+      return{
+        isOpenMenu:false,
+      }
+    },  
     components:{
         Menu
     },  
@@ -113,5 +123,14 @@ export default {
   height: 450px;
   background-image: url('@/assets/images/photo11.jpg');
   align-items: flex-start;
+}
+.menu_mobile{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #8D8D8D;
+  z-index: 5;
 }
 </style>

@@ -26,8 +26,13 @@ export default[
         component: resolve(__dirname, '../pages/ProjectDetail'),
     },
     {
-        path: '/:slug',
+        path: '/menu/:slug',
         name: 'ProjectsPage',
         component: resolve(__dirname, '../pages/ProjectsPage'),
+    },
+    {
+        path: '/social-media',
+        name: 'SocialMedia',
+        component: resolve(__dirname, '../pages/SocialMedia'),
     },
 ]

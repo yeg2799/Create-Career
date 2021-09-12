@@ -1,7 +1,7 @@
 <template>
  <div class="menu_wrapper">
         <div  v-for="menu in menus" :key="menu.id" class="menu_item">
-            <nuxt-link :to="menu.slug">{{menu.name}}</nuxt-link>
+            <nuxt-link :to="`${menu.slug}`">{{menu.name}}</nuxt-link>
         </div>
 </div> 
 </template>
@@ -13,28 +13,28 @@ export default {
             menus:[
                 {
                     id:1,
-                    name:"İlham Al",
-                    slug:"/inspiration"
+                    name:"Sosyal",
+                    slug:"/social-media"
                 },
                 {
                     id:2,
                     name:"İş Bul",
-                     slug:"/find-work"
+                     slug:"/menu/find-work"
                 },                
                 {
                     id:3,
                     name:"Tasarım Öğren",
-                    slug:"/learn-design"
+                    slug:"/menu/learn-design"
                 },
                 {
                     id:4,
                     name:"Profesyonel Ol",
-                    slug:"/go-pro"
+                    slug:"/menu/go-pro"
                 },
                 {
                     id:5,
                     name:"Tasarımcı Bul",
-                    slug:"/hire-designers"
+                    slug:"/menu/hire-designers"
                 }
             ]
         }
