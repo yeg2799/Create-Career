@@ -16,7 +16,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
+  
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/global.scss',
@@ -30,8 +30,28 @@ export default {
     { src: '~/plugins/vue-tel-input', ssr: false, defer: true },
   ],
   server: {
-    port: 8000, // default: 3000
+    port: 3000, // default: 3000
     host: '0.0.0.0',
+  },
+  render: {
+    http2: {
+      push: true,
+    },
+    static: {
+      maxAge: '1y',
+      setHeaders(res, path) {
+        if (path.includes('sw.js')) {
+          res.setHeader('Cache-Control', `public, max-age=${15 * 60}`);
+        }
+      },
+    },
+  },
+  lazySizes: {
+    extendAssetUrls: {
+      img: 'data-src',
+      source: 'data-srcset',
+      AppImage: ['source-md-url', 'image-url'],
+    },
   },
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -50,8 +70,23 @@ export default {
   svgSprite: {
     input: '~/assets/icons/',
   },
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    // analyze: true,
+    extend(config) {
+      config.performance = config.performance || {};
+      config.performance.maxEntrypointSize = 263168;
+      config.performance.maxAssetSize = 263168;
+    },
+    transpile: ['vee-validate/dist/rules'],
+
+    postcss: {
+      preset: {
+        stage: 4,
+        browsers: ['> 1%', 'last 2 versions', 'not ie <= 8'],
+        autoprefixer: {},
+      },
+    },
+
     filenames: {
       app: ({ isDev }) => (isDev ? '[name].js' : 'app.[contenthash].js'),
       chunk: ({ isDev }) => (isDev ? '[name].js' : 'chunk.[contenthash].js'),

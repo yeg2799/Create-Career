@@ -11,13 +11,14 @@
 
 <script>
 export default {
-    data() {
+   props:{
+    pictures:{
+      type:Array,
+      default:[]
+    }
+  },
+  data() {
     return {
-      pictures:[
-        {title:'photo9'},
-        {title:'photo10'},
-        {title:'photo11'}
-      ],
       swiperOption: {
         slidesPerView: 3,
         spaceBetween: 17,
@@ -50,9 +51,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables/_breakpoints";
 img{
     width: 100%;
     height: 400px;
+    @include bp(mobile){
+      height: 300px;
+    }
+    @include bp(mobile-xs){
+      height: 250px;
+    }
 }
 .slider-pagination{
   display: flex;

@@ -89,32 +89,28 @@
                 </div>
             </div>
             <div class="col-8 user_infos_box_wrapper">
-                <div class="user_infox_box">
+                <div class="user_infos_box">
                     <div class="box" v-if="activeId===0">
-                        Bilgilerim
+                        <div class="info_header">
+                            <h4>Deneyim</h4>
+                        </div>
+                        <div class="info_box">
+                            <div class="info_image">
+                                <img :src="require('@/assets/images/avatar.jpg')" alt="" srcset="">
+                            </div>
+                            <div class="info_titles">
+
+                            </div>
+                        </div>
                     </div>
                     <div class="connections box" v-if="activeId===1">
                         <b-card no-body>
                             <b-tabs card>
                                 <b-tab title="Following" active>
-                                    <div class="following_box">
-                                        <div class="d-flex align-items-center">
-                                            <div class="following_box_image">
-                                            <img :src="require('@/assets/images/avatar.jpg')" alt="" srcset="">
-                                        </div>
-                                        <div class="following_box_titles">
-                                            <span class="user_name">Berat Güzel</span>
-                                            <span class="follower_Count">2523 Takipçi</span>
-                                        </div>
-                                        <div>
-                                            Takibi Bırak
-                                        </div>
-                                        </div>
-
-                                    </div>
+                                    <FollowBox followButton="Takibi Bırak"/>
                                 </b-tab>
                                 <b-tab title="Follower">
-                                    <b-card-text>Tab contents 2</b-card-text>
+                                   <FollowBox followButton="Takip Et"/>
                                 </b-tab>
                             </b-tabs>
                         </b-card>
@@ -136,9 +132,10 @@
 
 <script>
 import ProjectsCard from '@/components/Cards/ProjectsCard.vue'
+import FollowBox from '../../components/FollowBox.vue'
 
 export default {
-  components: { ProjectsCard },
+  components: { ProjectsCard,FollowBox },
   data(){
       return{
           tabMenu:[
@@ -305,7 +302,7 @@ export default {
 }
 .user_infos_box_wrapper{
      padding: 0 !important;
-    .user_infox_box{
+    .user_infos_box{
         margin-top: 150px;
         border-top: 1px solid #efefef;
         background: #fff;
@@ -406,26 +403,5 @@ export default {
         }
     }
 
-    .connections{
-        .following_box{
-            display: flex;
-            .following_box_image{
-                img{
-                    width: 75px;
-                    height: 75pxpx;
-                }
-            }
-            .following_box_titles{
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                margin-left: 10px;
-                .user_name{
-                    font-size: 18px;
-                    font-weight: 600px;
-                }
 
-            }
-        }
-    }
 </style>

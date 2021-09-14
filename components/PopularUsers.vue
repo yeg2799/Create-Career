@@ -1,7 +1,7 @@
 <template>
     <div class="popular_users_part">
           <h3>Popüler Kullanıcılar</h3>
-          <div class="popular_users_wrapper"  >
+          <div class="popular_users_wrapper" >
             <div class="popular_users"  v-for="user in userInfos" :key="user.id">
                 <nuxt-link  :to="{ name:'UserProfile', params:{slug:user.slug}}"  >
             <div class="popular_users_header">
@@ -24,15 +24,17 @@
 </template>
 
 <script>
+
 export default {
+
   data(){
     return{
       userInfos:[
         {
           id:0,
-          imageUrl:'photo8',
-          userName:'Yunus Emre Güzel',
-          slug:'emre-guzel',
+          imageUrl:'yasinurun',
+          userName:'Yasin Ürün',
+          slug:'yasin-urun',
           socialMediaAccounts:[
 
             {

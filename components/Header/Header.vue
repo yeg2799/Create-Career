@@ -1,8 +1,8 @@
 <template>
   <div class="header" :class="$route.name==='UserProfile' ? 'user-profile-header':''">
-    <div class="menu_mobile" v-if="isOpenMenu">
-          <div>
-            Mobile
+    <div class="popup_menu" v-if="isOpenMenu">
+          <div class="popup_header" @click="isOpenMenu=!isOpenMenu">
+            <SvgSprite icon="close" />
           </div>
     </div>
     <div class="header_left">
@@ -124,13 +124,19 @@ export default {
   background-image: url('@/assets/images/photo11.jpg');
   align-items: flex-start;
 }
-.menu_mobile{
+.popup_menu{
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  background: #8D8D8D;
+  background: #1C1D1F;
   z-index: 5;
+  color: #fff;
+  .popup_header{
+    padding: 30px;
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 </style>

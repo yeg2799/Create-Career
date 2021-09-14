@@ -39,7 +39,6 @@
               <span>Yunus Emre Güzel</span>
               <hr>
           </div>
-
       </div>
       <!-- <div class="other_projects">
               <projects-card />

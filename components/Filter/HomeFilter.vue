@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="filter">
-        <div class="dropdown">
+        <!-- <div class="dropdown">
             <span>Popular</span>
             <svg-sprite icon="dropdown" />
-        </div>
-        <div class=filter_menu>
+        </div> -->
+        <div class="filter_menu">
             <span class="filter_menu_item active">All</span>
             <span class="filter_menu_item">Animation</span>
             <span class="filter_menu_item">Branding</span>
@@ -15,11 +15,14 @@
             <span class="filter_menu_item">Product Design</span>
             <span class="filter_menu_item">Web Design</span>
         </div>
-        <div class="filter_dropdown" :class="isOpenFilterPopup? 'active_dropdown':''" @click="isOpenFilterPopup=!isOpenFilterPopup">
+        <!-- <div class="filter_dropdown" :class="isOpenFilterPopup? 'active_dropdown':''" @click="isOpenFilterPopup=!isOpenFilterPopup">
             <span>Filters</span>
-        </div>
+        </div> -->
+         <!-- <div class="filter_dropdown">
+            <span>Filters</span>
+        </div> -->
     </div>
-    <transition name="fade" >
+    <!-- <transition name="fade" >
         <div class="popup_filter_menu" v-if="isOpenFilterPopup">
             <div class="popup_filter_menu_item">
                 <span>Tags</span>
@@ -38,7 +41,7 @@
                 <input type="text" >
             </div>
         </div>
-    </transition>
+    </transition> -->
   </div>
 </template>
 
@@ -53,15 +56,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables/_breakpoints";
 .filter{
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  justify-content: center;
   padding: 10px 0px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   align-items: center;
   &_menu{
     display: flex;
+    @include bp(mobile){
+    overflow: auto;
+    }
     &_item{
       cursor: pointer;
       display: inline;
