@@ -37,17 +37,22 @@
 </template>
 
 <script>
+
 export default {
 
 }
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables/_breakpoints";
 .login_page{
   display: flex;
   &_left{
     width: 50%;
     flex: 1;
+    @include bp(mobile){
+      display: none;
+    }
     img{
       width: 100%;
     }

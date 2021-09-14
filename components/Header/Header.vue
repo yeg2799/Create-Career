@@ -4,6 +4,20 @@
           <div class="popup_header" @click="isOpenMenu=!isOpenMenu">
             <SvgSprite icon="close" />
           </div>
+          <div class="popup_menu_wrapper">
+              <div class="popup_menu_item">
+                <nuxt-link :to="{name:'Login'}">Giriş Yap</nuxt-link>
+              </div>
+              <div class="popup_menu_item">
+                <nuxt-link :to="{name:'Register'}">Kayıt Ol</nuxt-link>
+              </div>
+              <div class="popup_menu_item">
+                <nuxt-link to="">Keşfet</nuxt-link>
+              </div>              
+              <div class="popup_menu_item">
+                <nuxt-link to="">İş Bul</nuxt-link>
+              </div>              
+          </div>
     </div>
     <div class="header_left">
       <div class="header_left_logo">
@@ -36,6 +50,11 @@ import Menu from '@/components/Header/Menu.vue';
 import { isMobileControl } from '@/mixins/isMobile.js';
 export default {
     mixins:[isMobileControl],
+    watch:{
+      $route(){
+          this.isOpenMenu=false;
+      }
+    },
     data(){
       return{
         isOpenMenu:false,
@@ -130,13 +149,24 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: #1C1D1F;
+  background: #F5F5F5;
   z-index: 5;
-  color: #fff;
+  color: #484848;
   .popup_header{
     padding: 30px;
     display: flex;
     justify-content: flex-end;
+  }
+  .popup_menu_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    height: 90%;
+      .popup_menu_item{
+        padding: 20px 0px;
+      }   
   }
 }
 </style>

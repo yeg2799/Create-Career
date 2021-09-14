@@ -1,6 +1,6 @@
 <template>
   <div class="register_wrapper">
-     <div class="register_left">
+     <div class="register_left" v-if="!isMobileDeviceStatus">
         <img src="@/assets/images/login.png" alt="">
      </div>
      <div class="register_right">
@@ -68,7 +68,9 @@
 
 <script>
 import Toggle from '@/components/Toggle.vue'
+import {isMobileControl} from '@/mixins/isMobile'
 export default {
+  mixins:[isMobileControl],
   components:{
     Toggle
   },
