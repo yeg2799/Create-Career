@@ -4,10 +4,7 @@
         <img src="@/assets/images/login.png" alt="">
       </div>
       <div class="login_page_right">
-          <!-- <div class="login_page_right_header">
-              <img src="@/assets/images/login4.png" alt="">
-         </div> -->
-         <div class="">
+         <div class="login_page_right_header">
            <h1>Hoşgeldiniz</h1>
            <span>Hesabınıza giriş yaparak size sunulan ayrıcalıklardan anında faydalanabilirsiniz.</span>
          </div>
@@ -64,15 +61,18 @@ export default {
     align-items: center;
     justify-content: center;
     background: #f5d4d4;
+    @include bp(mobile){
+      min-height: 600px;
+    }
     &_header{
-
-      img{
-        width: 500px;
-      }
+      text-align: center;
+      margin-bottom: 30px;
     }
     &_box{
       width: 500px;
-    
+      @include bp(mobile){
+      width: 400px;
+      }
       &_form{
         input{
           font-size: 12px;

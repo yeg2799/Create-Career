@@ -90,19 +90,51 @@
             </div>
             <div class="col-8 user_infos_box_wrapper">
                 <div class="user_infos_box">
-                    <div class="box" v-if="activeId===0">
-                        <div class="info_header">
-                            <h4>Deneyim</h4>
+                    <div class="d-flex p-4" v-if="activeId===0">
+                        <div class="left_box">
+                            <div class="info_header">
+                                <h4>Deneyim</h4>
+                            </div>
+                            <div class="info_box" v-for="a in 3" :key="a">
+                                <div class="d-flex pt-4">
+                                    <div class="info_image">
+                                        <img :src="require('@/assets/images/avatar.jpg')" alt="" srcset="">
+                                    </div>
+                                    <div class="info_titles">
+                                        <h5>Frontend Developer</h5>
+                                        <h6>OtoKirala-Tam Zamanlı</h6>
+                                        <span>Mar 2021 - Su Anda 7 ay</span>
+                                        <span>Adana Türkiye</span>
+                                    </div>
+                                </div>
+                                <div class="info_config">
+                                    <SvgSprite icon="alert" />
+                                </div>
+                            </div>
+                        <div class="info_header mt-5">
+                            <h4>Eğitim</h4>
                         </div>
                         <div class="info_box">
-                            <div class="info_image">
-                                <img :src="require('@/assets/images/avatar.jpg')" alt="" srcset="">
+                            <div class="d-flex pt-4">
+                                <div class="info_image">
+                                    <img :src="require('@/assets/images/avatar.jpg')" alt="" srcset="">
                             </div>
                             <div class="info_titles">
-
+                                <h5>Selçuk Üniversitesi</h5>
+                                <span>Lisans Derecesi, Bilgisayar Mühendisliği</span>
+                                <span>2017 - 2022</span>
+                            </div>
+                            </div>
+                            <div class="info_config">
+                                <SvgSprite icon="alert" />
                             </div>
                         </div>
+                        </div>
+                        <div class="right_box ml-3">
+                            Sağ Taraf
+                        </div>
                     </div>
+
                     <div class="connections box" v-if="activeId===1">
                         <b-card no-body>
                             <b-tabs card>
@@ -165,7 +197,7 @@ export default {
             },
             {
                 id:4,
-                icon:'alert',
+                icon:'setting',
                 title:'Profil Ayarlarım',
                 active:false,
             }
@@ -309,6 +341,26 @@ export default {
         width: 100%;
         height: 500px;
         z-index: 3;
+        .left_box{
+            width: 50%;
+        }
+    }
+    .info_box{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .info_titles{
+            display: flex;
+            flex-direction: column;
+        }
+        .info_image{
+            margin-right: 15px;
+            img{
+                width:50px ;
+                height: 50px;
+            }
+        }
+
     }
 }
 .user_profile{

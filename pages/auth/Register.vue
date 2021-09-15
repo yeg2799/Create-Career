@@ -13,12 +13,12 @@
               <form>
                   <Toggle value1="İş Arayan" value2="İş Veren" class="col-12 mb-4"/>
                 <div class="d-flex justify-content-between">
-                  <div class="mb-3 col-lg-6">
+                  <div class="mb-3 col-lg-6 col-12">
                       <V-Input type="text" 
                       placeholder="Lütfen Adınızı Giriniz." 
                       label="Adı"/>
                   </div>
-                  <div class="mb-3 col-lg-6">
+                  <div class="mb-3 col-lg-6 col-12">
                       <V-Input type="text" 
                       placeholder="Lütfen Soyadınızı Giriniz" 
                       label="Soyadı"/>
@@ -39,14 +39,14 @@
                     placeholder="Lütfen E-Posta Adresinizi Giriniz" 
                     label="Telefon Numarası"/>
                 </div>
-                <div class="d-flex justify-content-between">
-                  <div class="mb-3 col-lg-6">
+                <div class="d-flex justify-content-between password_box">
+                  <div class="mb-3 col-lg-6 col-12">
                     <V-Input type="password" 
                     placeholder="Lütfen Şifrenizi Giriniz" 
                     label="Şifre" 
                     iconRight="eye"/>
                   </div>
-                <div class="mb-3 col-lg-6">
+                <div class="mb-3 col-lg-6 col-12">
                     <V-Input type="password" 
                     placeholder="Lütfen Şifrenizi Tekrar Giriniz" 
                     label="Şifre Tekrar" 
@@ -79,6 +79,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables/_breakpoints";
 .register_wrapper{
   display: flex;
 }
@@ -98,11 +99,19 @@ export default {
   &_header{
     width: 100%;
     padding: 20px;
+    @include bp(mobile){
+      text-align: center;
+    }
   }
   &_box{
    width: 100%;
     &_form{
       padding: 20px;
+    }
+  }
+  .password_box{
+    @include bp(mobile){
+      flex-direction: column;
     }
   }
   .create_account_button{
