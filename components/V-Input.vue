@@ -47,7 +47,7 @@ export default {
 .vue-input{
     &-label{
         font-size: 16px;
-        color: #730a0a;
+        color: #fff;
         font-weight: 600;
         margin-left: 30px;
     }

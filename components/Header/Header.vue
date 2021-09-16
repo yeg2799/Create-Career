@@ -12,7 +12,7 @@
                 <nuxt-link :to="{name:'Register'}">Kayıt Ol</nuxt-link>
               </div>
               <div class="popup_menu_item">
-                <nuxt-link to="">Keşfet</nuxt-link>
+                <nuxt-link :to="{name:'ProjectsPage',params:{slug:'kesfet'}}">Keşfet</nuxt-link>
               </div>              
               <div class="popup_menu_item">
                 <nuxt-link to="">İş Bul</nuxt-link>
@@ -73,7 +73,8 @@ export default {
     width: 100%;
     // height: 300px;
 
-    background: #efefef;
+    background: #fff;
+    border-bottom: 2px solid #CEBE79;
     font-size: 16px;
     font-weight: 400;
     padding: 20px 30px;

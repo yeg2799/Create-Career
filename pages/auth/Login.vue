@@ -60,7 +60,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #f5d4d4;
+    background: #d6e0db;
     @include bp(mobile){
       min-height: 600px;
     }

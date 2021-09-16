@@ -1,56 +1,71 @@
 <template>
-  <div class="cards_wrapper">
+  <div class="cards_wrapper" v-if="popularProjects.length>0">
       <h3 class="card_title" v-if="cardTitle">{{cardTitle}}</h3>
-    <nuxt-link to="/project-detail"  class="card_wrapper">
-        <div class="card" v-for="picture in pictures" :key="picture.id">
-            <div class="card_project_image">
-                <img :src="require(`@/assets/images/${picture.title}.jpg`)" />
-                <div class="card_project_name">Dashboard</div>
+    <div  class="card_wrapper">
+        <div class="card" v-for="project in popularProjects" :key="project.id">
+           <nuxt-link :to="{name:'ProjectDetail',params:{slug:`${project.slug}`}}" >
+            <div class="card_project_image" v-if="!isMobileDeviceStatus">
+                <img :src="require(`@/assets/images/${project.picture}.jpg`)" />
+                <div class="card_project_name">{{project.projectTitle}}</div>
             </div>
+            <!-- <Swiper :pictures="swiperPictures" v-if="isMobileDeviceStatus"/> -->
+            </nuxt-link>
              <div class="card_profile">
                  <div class="card_profile_left">
-                        <div class="card_profile_img"><img :src="require('@/assets/images/avatar.jpg')" loading="lazy"/></div>
-                        <div class="card_profile_title">Emre Güzel</div>
+                        <div class="card_profile_img"><img :src="require(`@/assets/images/${project.userPicture}.jpg`)" loading="lazy"/></div>
+                        <div class="card_profile_title">{{project.userName}}</div>
                  </div>
                 <div class="card_profile_right">
                     <div class="liker">
                         <svg-sprite icon="like"/>
-                        <span>100</span>
+                        <span>{{project.likeCount}}</span>
                     </div>
                     <div class="views">
                         <svg-sprite icon="eye"/>
-                        <span>2000</span>
+                        <span>{{project.viewsCount}}</span>
                     </div>
                 </div>
              </div>
         </div>
-    </nuxt-link>
+        <!-- <project-card-swiper :pictures="swiperPictures"/> -->
+        </div>
     <div class="more_than_button">Daha fazlasını gör</div>
   </div>
 </template>
 
 <script>
+import {isMobileControl} from '@/mixins/isMobile'
+import Swiper from '@/components/Swiper'
+import ProjectCardSwiper from '@/components/ProjectCardSwiper.vue'
 export default {
+    mixins:[isMobileControl],
+    components:{
+        Swiper,
+        ProjectCardSwiper
+    },
     props:{
         cardTitle:{
-            required:false,
             type:String,
+            default:''
+        },
+        popularProjects:{
+            type:Array,
+            default:[]
         }
     },
     data(){
         return {
-            pictures:[
-                {title:'photo1'},
-                {title:'photo2'},
-                {title:'photo3'},
-                {title:'photo4'},
-                {title:'photo5'},
-                {title:'photo6'},
-                {title:'photo7'},
-                {title:'photo8'},
-            ],
+            swiperPictures:[],
         }
     },
+    mounted(){
+        if(this.popularProjects.length>0){
+            this.popularProjects.forEach(element => {
+                console.log(element);
+                this.swiperPictures.push({id:element.id,title:element.picture})
+            });
+        }
+    }
 }
 </script>
 
@@ -60,6 +75,7 @@ export default {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    
     .card_wrapper{
         display: flex;
         flex-wrap: wrap;
@@ -70,7 +86,8 @@ export default {
             border: none;
             margin-top: 30px;
             margin-right: 15px; 
-             cursor: pointer;
+            cursor: pointer;
+            background: #EDF2F6;
             &_project_image{
                  position: relative;
                 .card_project_name{

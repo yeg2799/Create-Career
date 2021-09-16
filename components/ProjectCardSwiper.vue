@@ -1,5 +1,5 @@
 <template>
-    <div v-swiper:popularLocationsSlider="swiperOption" class="popular-locations__list">
+      <div v-swiper:popularProjects="swiperOption" class="popular-locations__list">
         <div class="swiper-wrapper">
           <div v-for="picture in pictures" :key="picture.id" class="swiper-slide popular-locations-swiper-slide">
             <img :src="require(`@/assets/images/${picture.title}.jpg`)" loading="lazy"/>
@@ -11,14 +11,11 @@
 
 <script>
 export default {
-   props:{
+    props:{
     pictures:{
       type:Array,
       default:[]
     }
-  },
-  mounted(){
-    console.log(this.pictures);
   },
   data() {
     return {
@@ -50,7 +47,6 @@ export default {
     };
   },
 }
-
 </script>
 
 <style lang="scss" scoped>

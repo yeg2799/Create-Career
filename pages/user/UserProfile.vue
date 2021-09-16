@@ -339,7 +339,7 @@ export default {
         border-top: 1px solid #efefef;
         background: #fff;
         width: 100%;
-        height: 500px;
+        height: 100%;
         z-index: 3;
         .left_box{
             width: 50%;
