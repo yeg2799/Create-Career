@@ -1,77 +1,157 @@
 <template>
   <div class="post_wrapper">
-                <div class="post" v-for="a in 4" :key="a">
-                    <div class="post_header">
-                      <div class="user_profile">
-                         <img :src="require('@/assets/images/photo7.jpg')" alt="" class="profile_small_image">
-                      </div>
-                      <div class="user_titles">
-                        <span class="user">Berat Güzel</span>
-                        <span class="username">@brtgzll</span>
-                      </div>
-                    </div>
-                    <div class="post_center">
-                      <div class="post_description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, repellat minus optio velit necessitatibus fugiat itaque in laudantium nemo architecto!
-                      </div>
-                      <div class="post_image">
-                        <img :src="require('@/assets/images/photo5.jpg')" alt="" srcset="">
-                      </div>
-                      <div class="post_reactions">
-                          <div class="d-flex">
-                            <div class="reaction">
-                                <SvgSprite icon="like_fill"/>
-                                <span class="interaction_count">20</span>
-                            </div>                        
-                            <div class="reaction">
-                                <SvgSprite icon="comment"/>
-                                <span class="interaction_count">1</span>
-                            </div>                        
-                            <div class="reaction">
-                                <SvgSprite icon="share"/>
-                                <span class="interaction_count">0</span>
-                            </div>
-                          </div>
-                          <div class="liker_peoples">
-
-                          </div>
-                      </div>
-                      <div class="post_comments_wrapper">
-                          <div class="post_comment" v-for="a in 3" :key="a">
-                              <div class="user_image left">
-                                  <img :src="require('@/assets/images/avatar.jpg')" alt="" srcset="" class="profile_small_image">
-                              </div>
-                              <div class="post_comment_right">
-                                  <div class="username">
-                                      <span>Jason Statham</span>
-                                  </div>
-                                  <div class="comment">
-                                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut vero non omnis ipsam consectetur dolorem sunt, tempore odit quaerat magnam?</p>
-                                  </div>
-                                  <div class="d-flex">
-                                    <div class="comment_date">
-                                        1 Year Ago
-                                    </div>
-                                    <div class="reply_icon comment_reaction" >
-                                        <SvgSprite icon="reply_fill" />
-                                    </div>
-                                    <div class="like_icon comment_reaction">
-                                        <SvgSprite icon="like_fill" />
-                                        <span>5</span>
-                                    </div>
-                                  </div>
-
-                              </div>
-                          </div>
-                      </div>
+    <div class="post" v-for="post in posts" :key="post.id">
+        <div class="post_header">
+            <div class="user_profile">
+                <img :src="require(`@/assets/images/${post.user.image}.jpg`)" alt="" class="profile_small_image">
+            </div>
+            <div class="user_titles">
+                <nuxt-link :to="{name:'UserProfile', params:{slug:`${post.user.slug}`}}"><span class="user">{{post.user.name}}</span></nuxt-link>
+                <span class="username">{{post.user.userName}}</span>
+            </div>
+        </div>
+        <div class="post_center">
+            <div class="post_description">
+                {{post.post.description}}
+            </div>
+            <div class="post_image">
+                <img :src="require(`@/assets/images/${post.post.image}.jpg`)" alt="" srcset="">
+            </div>
+            <div class="post_reactions">
+                <div class="d-flex">
+                    <div class="reaction" @click="likerCounter(post.id)">
+                        <SvgSprite icon="like_fill" :style="post.isLiked?{color:'red'}:''"/> 
+                        <span class="interaction_count">{{post.post.counter.liker}}</span>
+                    </div>       
+                    <div class="reaction" @click="openComment(post.id)">
+                        <SvgSprite icon="comment"/>
+                        <span class="interaction_count">{{post.post.comments.length}}</span>
+                    </div>       
+                    <div class="reaction">
+                        <SvgSprite icon="share"/>
+                        <span class="interaction_count">{{post.post.counter.share}}</span>
                     </div>
                 </div>
+                <div class="liker_peoples">
+
+                </div>
             </div>
+                <PostComment v-if="post.isOpenComment" :comments="post.post.comments"/>
+        </div>
+    </div>
+</div>
 </template>
 
 <script>
+import PostComment from './PostComment.vue'
 export default {
-
+  components: { PostComment },
+  data(){
+      return{
+          isComment:false,
+          posts:[
+              {
+                  id:0,
+                  isLiked:false,
+                  isOpenComment:false,
+                  user:{
+                      userName:'@emr_gzl',
+                      slug:'emr_guzel',
+                      name:'Emre Güzel',
+                      image:'avatar'
+                  },
+                  post:{
+                      description:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, repellat minus optio velit necessitatibus fugiat itaque in laudantium nemo architecto!',
+                      image:'photo6',
+                      counter:{
+                          liker:20,
+                          share:0
+                      },
+                      comments:[
+                          { 
+                              id:0,
+                              commentUserName:'Bradd Pitt',
+                              commentUserPicture:'avatar',
+                              commentDescription:'klasmklcmasklcmaskmlcmaslklcalcasmkcnasnjkcnasn',
+                              commentDate:'1 Year Ago',
+                              commentLiker:2
+                          },
+                          { 
+                              id:1,
+                              commentUserName:'Bradd Pitt',
+                              commentUserPicture:'avatar',
+                              commentDescription:'klasmklcmasklcmaskmlcmaslklcalcasmkcnasnjkcnasn',
+                              commentDate:'1 Year Ago',
+                              commentLiker:2
+                          },
+                          
+                      ]
+                  }
+              },
+               {
+                  id:1,
+                  isLiked:false,
+                  isOpenComment:false,
+                  user:{
+                      userName:'@brt_gzl',
+                      slug:'brt_guzel',
+                      name:'Berat Güzel',
+                      image:'photo11'
+                  },
+                  post:{
+                      description:'Varsa şekerin patlayalım şekerim',
+                      image:'photo9',
+                      counter:{
+                          liker:20,
+                          share:0
+                      },
+                      comments:[
+                          { 
+                              id:0,
+                              commentUserName:'Bradd Pitt',
+                              commentUserPicture:'avatar',
+                              commentDescription:'klasmklcmasklcmaskmlcmaslklcalcasmkcnasnjkcnasn',
+                              commentDate:'1 Year Ago',
+                              commentLiker:2
+                          },
+                          { 
+                              id:1,
+                              commentUserName:'Bradd Pitt',
+                              commentUserPicture:'avatar',
+                              commentDescription:'klasmklcmasklcmaskmlcmaslklcalcasmkcnasnjkcnasn',
+                              commentDate:'1 Year Ago',
+                              commentLiker:2
+                          },
+                          
+                      ]
+                  }
+              },
+              ]
+      }
+  },
+  methods:{
+      likerCounter(id){
+         this.posts.forEach(element => {
+            if(element.id===id && !element.isLiked){
+                element.post.counter.liker++;
+                element.isLiked=true;
+            }else if(element.id===id){
+                 element.post.counter.liker--;
+                 element.isLiked=false;
+            }
+         });
+      },
+      openComment(id){
+          console.log(id);
+            this.posts.forEach(element => {
+            if(element.id===id && !element.isOpenComment){
+                element.isOpenComment=true;
+            }else if(element.id===id && element.isOpenComment){
+                 element.isOpenComment=false;
+            }
+         });
+      }
+  }
 }
 </script>
 
@@ -124,23 +204,7 @@ export default {
               }
             }
           }
-          .post_comments_wrapper{
-             
-              .post_comment{
-                  display: flex;
-                   margin-top: 20px;
-                  .post_comment_right{
-                      margin-left: 10px;
-                      .username{
-                          font-weight: 600;
-                      }
-                  }
-                  .comment_reaction{
-                      margin-left: 10px;
-                      cursor: pointer;
-                  }
-              }
-          }
+        
         }
         }
         

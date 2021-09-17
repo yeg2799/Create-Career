@@ -51,23 +51,25 @@ export default {
           padding: 0px 10px 10px;
           .post_area{
             width: 550px;
+            height: 100px;
+            resize: none;
             border: none;
           }
         }
         &_bottom{
            padding: 0px 10px 10px;
           .share_button{
-            background: #CEBE79;
+            background: #DA6447;
             color: #fff;
             text-align: center;
             padding: 5px 0px;
             font-size: 16px;
             font-weight: 600;
             border-radius: 10px;
-            border: 1px solid #CEBE79;
+            border: 1px solid #DA6447;
             cursor: pointer;
             &:hover{
-              color: #CEBE79;
+              color: #DA6447;
               background: #fff;
               
             }
