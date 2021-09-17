@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
       .create_post{
-        width: 90%;
+        width: 100%;
         border: 1px solid #efefef;
         background: #fff;
         border-radius: 10px; 
@@ -49,12 +49,16 @@ export default {
         &_center{
           display: flex;
           padding: 0px 10px 10px;
-          .post_area{
-            width: 550px;
-            height: 100px;
-            resize: none;
-            border: none;
+          .create_post_input{
+             width: 550px;
+            .post_area{      
+                width: 100%;
+                height: 120px;
+                resize: none;
+                border: none;
+            }
           }
+
         }
         &_bottom{
            padding: 0px 10px 10px;

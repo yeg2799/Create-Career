@@ -51,7 +51,7 @@ export default {
       padding: 25px 0px;
     }
     &_left{
-      @include bp(mobile){
+      @include bp(tablet){
         display: none;
       }
     }

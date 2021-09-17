@@ -159,7 +159,7 @@ export default {
   .post_wrapper{
         .post{
           margin-top: 10px;
-          width: 90%;
+          width: 100%;
           background: #fff;
           border-radius: 10px;
           // height: 400px;
