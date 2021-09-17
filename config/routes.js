@@ -35,4 +35,9 @@ export default[
         name: 'SocialMedia',
         component: resolve(__dirname, '../pages/SocialMedia'),
     },
+    {
+        path: 'find-work',
+        name : 'FindWork',
+        component: resolve(__dirname,'../pages/FindWork.vue')
+    }
 ]

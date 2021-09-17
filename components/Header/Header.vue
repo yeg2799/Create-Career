@@ -15,7 +15,7 @@
                 <nuxt-link :to="{name:'ProjectsPage',params:{slug:'kesfet'}}">Keşfet</nuxt-link>
               </div>              
               <div class="popup_menu_item">
-                <nuxt-link to="">İş Bul</nuxt-link>
+                <nuxt-link :to="{name:'FindWork'}">İş Bul</nuxt-link>
               </div>              
           </div>
     </div>
