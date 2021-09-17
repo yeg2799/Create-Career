@@ -32,10 +32,37 @@
                                 <span class="interaction_count">0</span>
                             </div>
                           </div>
+                          <div class="liker_peoples">
 
+                          </div>
                       </div>
-                      <div class="post_comment">
+                      <div class="post_comments_wrapper">
+                          <div class="post_comment" v-for="a in 3" :key="a">
+                              <div class="user_image left">
+                                  <img :src="require('@/assets/images/avatar.jpg')" alt="" srcset="" class="profile_small_image">
+                              </div>
+                              <div class="post_comment_right">
+                                  <div class="username">
+                                      <span>Jason Statham</span>
+                                  </div>
+                                  <div class="comment">
+                                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut vero non omnis ipsam consectetur dolorem sunt, tempore odit quaerat magnam?</p>
+                                  </div>
+                                  <div class="d-flex">
+                                    <div class="comment_date">
+                                        1 Year Ago
+                                    </div>
+                                    <div class="reply_icon comment_reaction" >
+                                        <SvgSprite icon="reply_fill" />
+                                    </div>
+                                    <div class="like_icon comment_reaction">
+                                        <SvgSprite icon="like_fill" />
+                                        <span>5</span>
+                                    </div>
+                                  </div>
 
+                              </div>
+                          </div>
                       </div>
                     </div>
                 </div>
@@ -96,6 +123,23 @@ export default {
                 margin-left: 0;
               }
             }
+          }
+          .post_comments_wrapper{
+             
+              .post_comment{
+                  display: flex;
+                   margin-top: 20px;
+                  .post_comment_right{
+                      margin-left: 10px;
+                      .username{
+                          font-weight: 600;
+                      }
+                  }
+                  .comment_reaction{
+                      margin-left: 10px;
+                      cursor: pointer;
+                  }
+              }
           }
         }
         }
