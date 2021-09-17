@@ -164,8 +164,9 @@ export default {
     border-radius: 40px;
     border: 1px solid #CEBE79;
     cursor: pointer;
+    font-weight: 600;
     &:hover{
-        background: #fff;
+        background: #EDF2F6;
         color: #CEBE79;
         // border: 1px solid #CEBE79;
     }

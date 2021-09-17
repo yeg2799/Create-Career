@@ -16,6 +16,7 @@ export default {
 <style lang="scss" scoped>
 .footer_wrapper {
   width: 100%;
+  // border-top: 1px solid black;
   .footer{
     width: 80%;
     height: 200px;

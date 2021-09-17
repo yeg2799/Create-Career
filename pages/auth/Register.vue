@@ -91,7 +91,6 @@ export default {
   }
 }
 .register_right{
-  background: #d6e0db;
   flex: 1;
   display: flex;
   flex-direction: column;

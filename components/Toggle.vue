@@ -34,10 +34,10 @@ export default {
 span{
     font-size: 14px;
     font-weight: 600;
-    color:#fff
+    // color:#fff
 
 }
 .active{
-    color:#000;
+     color: #E367A7;
 }
 </style>
