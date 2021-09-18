@@ -64,7 +64,11 @@
     height:40px;
     border-radius: 100%;
   }
-
+  .profile_small_image_square{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+  }
   .orange-color{
     color: #DA6447;
   }
@@ -80,7 +84,6 @@
         display: inline-block;
         font-size: 14px;
         font-weight: 500;
-        margin-bottom: 20px;
         padding: 15px;
         position: relative;
         text-transform: capitalize;
