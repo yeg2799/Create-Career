@@ -1,6 +1,6 @@
 <template>
-    <div class="follow_suggestion">
-        <div class="follow_suggestion_header">
+    <div class="follow_suggestion box">
+        <div class="follow_suggestion_header box_header">
             <h4 class="title">Takip Önerisi</h4>
         </div>
         <div class="follow_suggestion_list">
@@ -65,24 +65,6 @@ export default {
 <style lang="scss" scoped>
     .follow_suggestion{
         margin-top: 20px;
-        width: 100%;
-        border: 1px solid #efefef;
-        background: #fff;
-        border-radius: 10px; 
-        &_header{
-           .title{
-            border-bottom: 1px solid #e6ecf5;
-            color: #515365;
-            display: inline-block;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            padding: 15px;
-            position: relative;
-            text-transform: capitalize;
-            width: 100%;
-          }
-        }
         &_list{
           padding:0 20px 10px;
           .follow_suggestion_user{

@@ -68,3 +68,23 @@
   .orange-color{
     color: #DA6447;
   }
+  .box{
+    width: 100%;
+    border: 1px solid #efefef;
+    background: #fff;
+    border-radius: 10px;  
+    &_header{
+      .title{
+        border-bottom: 1px solid #e6ecf5;
+        color: #515365;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        padding: 15px;
+        position: relative;
+        text-transform: capitalize;
+        width: 100%;
+      }
+    }
+  }

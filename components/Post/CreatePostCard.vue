@@ -1,6 +1,6 @@
 <template>
-    <div class="create_post">
-        <div class="create_post_header">
+    <div class="create_post box">
+        <div class="create_post_header box_header">
             <h4 class="title">Gönderi Oluştur</h4>
         </div>
         <div class="create_post_center">
@@ -27,25 +27,6 @@ export default {
 
 <style lang="scss" scoped>
       .create_post{
-        width: 100%;
-        border: 1px solid #efefef;
-        background: #fff;
-        border-radius: 10px; 
-         
-        &_header{
-          .title{
-            border-bottom: 1px solid #e6ecf5;
-            color: #515365;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            padding: 15px;
-            position: relative;
-            text-transform: capitalize;
-            width: 100%;
-          }
-        }
         &_center{
           display: flex;
           padding: 0px 10px 10px;
