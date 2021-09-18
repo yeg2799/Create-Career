@@ -61,7 +61,6 @@ export default {
     mounted(){
         if(this.popularProjects.length>0){
             this.popularProjects.forEach(element => {
-                console.log(element);
                 this.swiperPictures.push({id:element.id,title:element.picture})
             });
         }

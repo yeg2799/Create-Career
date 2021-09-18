@@ -17,9 +17,6 @@ export default {
       default:[]
     }
   },
-  mounted(){
-    console.log(this.pictures);
-  },
   data() {
     return {
       swiperOption: {

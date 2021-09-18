@@ -36,9 +36,6 @@ export default {
             default:[]
         }
     },
-    mounted(){
-        console.log(this.comments);
-    }
 }
 </script>
 

@@ -142,7 +142,6 @@ export default {
          });
       },
       openComment(id){
-          console.log(id);
             this.posts.forEach(element => {
             if(element.id===id && !element.isOpenComment){
                 element.isOpenComment=true;

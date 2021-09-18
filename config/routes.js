@@ -36,7 +36,7 @@ export default[
         component: resolve(__dirname, '../pages/SocialMedia'),
     },
     {
-        path: 'find-work',
+        path: '/find-work',
         name : 'FindWork',
         component: resolve(__dirname,'../pages/FindWork.vue')
     }
