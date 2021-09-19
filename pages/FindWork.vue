@@ -6,12 +6,8 @@
           <AdvertisementJobCard />
         </div>
         <div class="find-work-right col-lg-4">
-          <div class="filter-box box">
-            <div class="filter-box-header box_header">
-              <h4 class="title">Filtrele</h4>
-            </div>
-          </div>
-        </div>
+            <WorkFilterBox />
+        </div>  
       </div>
   </div>
 </template>
@@ -19,8 +15,9 @@
 <script>
 import AdvertisementJobCard from '../components/Cards/AdvertisementJobCard.vue'
 import SuggestionOfWork from '../components/Cards/SuggestionOfWork.vue'
+import WorkFilterBox from '../components/Filter/WorkFilterBox.vue'
 export default {
-  components: { SuggestionOfWork, AdvertisementJobCard },
+  components: { SuggestionOfWork, AdvertisementJobCard, WorkFilterBox },
 
 }
 </script>
@@ -30,8 +27,6 @@ export default {
   display:flex;
   margin-top: 20px;
 
-  .filter-box{
 
-  }
 }
 </style>

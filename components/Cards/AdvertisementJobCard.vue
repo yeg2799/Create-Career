@@ -4,7 +4,7 @@
               <h4 class="title">İş İlanları</h4>
             </div>
             <div class="advertisement_job_wrapper">
-              <div class="advertisement_job" v-for="a in 5" :key="a">
+              <nuxt-link to="/find-work/detail" class="advertisement_job" v-for="a in 5" :key="a">
                   <div class="advertisement_job_left">
                     <div class="advertisement_job_image">
                       <img :src="require('@/assets/images/photo6.jpg')" alt="" class="profile_small_image_square">
@@ -20,7 +20,7 @@
                   <div class="advertisement_job_right">
 
                   </div>
-              </div>
+              </nuxt-link>
             </div>
           </div>
 </template>
