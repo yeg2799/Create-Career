@@ -29,6 +29,7 @@
                     </div>       
                     <div class="reaction">
                         <SvgSprite icon="share"/>
+                        
                         <span class="interaction_count">{{post.post.counter.share}}</span>
                     </div>
                 </div>

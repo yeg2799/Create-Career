@@ -44,5 +44,10 @@ export default[
         path: '/find-job/:id',
         name : 'FindJobDetail',
         component: resolve(__dirname,'../pages/FindJobDetail.vue')
+    },
+    {
+        path: '/blog',
+        name : 'Blog',
+        component: resolve(__dirname,'../pages/Blog.vue')
     }
 ]

@@ -242,12 +242,18 @@ export default {
     justify-content: center;
     &_name{
       font-weight: 500;
+      text-align: center;
     }
     &_accounts{
       margin-top: 5px;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      // justify-content: space-between;
+      justify-content: center;
+      margin-right: 10px;
+      &:last-child{
+        margin-right: 0;
+      }
       .icon_wrapper{
         // border: 1px solid black;
         // padding: 5px;

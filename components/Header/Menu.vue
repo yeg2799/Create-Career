@@ -33,8 +33,8 @@ export default {
                 },
                 {
                     id:5,
-                    name:"Tasarımcı Bul",
-                    slug:"/menu/hire-designers"
+                    name:"Blog",
+                    slug:"/blog"
                 }
             ]
         }
