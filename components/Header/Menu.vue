@@ -19,7 +19,7 @@ export default {
                 {
                     id:2,
                     name:"İş Bul",
-                    slug:"/find-work"
+                    slug:"/find-job"
                 },                
                 {
                     id:3,

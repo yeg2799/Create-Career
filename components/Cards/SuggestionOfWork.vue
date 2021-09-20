@@ -1,14 +1,14 @@
 <template>
-            <div class="suggestion-of-work box">
-            <div class="suggestion-of-work-header box_header">
-                <h4 class="title">Önerilen iş Aramaları</h4>
-            </div>
-            <div class="suggestion-of-work-badge_wrapper">
-              <div class="badge" v-for="a in 10" :key="a">
-                <span>FrontEnd Developer</span>
-                <span class="badge-close">x</span></div>
-            </div>
-          </div>
+  <div class="suggestion-of-work box">
+    <div class="suggestion-of-work-header box_header">
+      <h4 class="title">Önerilen iş Aramaları</h4>
+    </div>
+    <div class="suggestion-of-work-badge_wrapper">
+      <div class="badge" v-for="a in 10" :key="a">
+        <span>FrontEnd Developer</span>
+        <span class="badge-close">x</span></div>
+      </div>
+  </div>
 </template>
 
 <script>
