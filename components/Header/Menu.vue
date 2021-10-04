@@ -28,8 +28,8 @@ export default {
                 },
                 {
                     id:4,
-                    name:"Profesyonel Ol",
-                    slug:"/menu/go-pro"
+                    name:"Projeni Yükle",
+                    slug:"/upload-project"
                 },
                 {
                     id:5,

@@ -54,5 +54,10 @@ export default[
         path: '/blog/:slug',
         name : 'BlogDetail',
         component: resolve(__dirname,'../pages/BlogDetail.vue')
+    },
+    {
+        path: '/upload-project',
+        name : 'UploadProject',
+        component: resolve(__dirname,'../pages/UploadProject.vue')
     }
 ]
