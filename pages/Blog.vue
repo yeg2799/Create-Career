@@ -8,10 +8,16 @@
               <div class="blog_item_image">
                   <img :src="require('@/assets/images/photo6.jpg')" alt="" srcset="">
               </div>
+              <div class="blog_item_desc">
+                  <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis, similique.</span>
+              </div>
           </div>
           <div class="blog_item" v-for="blog in blogs" :key="blog.id" :class="blog.id===0 ? 'first-child':blog.id%3===2? 'last-child':''"  >
               <div class="blog_item_image">
                   <img :src="require(`@/assets/images/${blog.picture}.jpg`)" alt="" srcset="">
+              </div>
+              <div class="blog_item_desc">
+                  <span>Lorem ipsum dolor sit.</span>
               </div>
           </div>
       </div>
@@ -49,7 +55,7 @@ data(){
             },
             {
                 id:6,
-                picture:'photo7'
+                picture:'photo11'
             },
             {
                 id:7,
@@ -73,11 +79,23 @@ data(){
         justify-content: center;
     }
 }
+.blog_item_desc{
+    font-size: 18px;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    font-weight: 600;
+    padding: 20px;
+}
 .blog_items{
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
+    
+    
     .blog_item_main{
+         position: relative;
+         cursor: pointer;
         .blog_item_image{
             margin-right: 10px;
             img{
@@ -90,6 +108,8 @@ data(){
     .blog_item{
         margin-right: 10px;
         margin-top: 30px;
+        position: relative;
+        cursor: pointer;
         &.first-child{
             margin: 0;
         }

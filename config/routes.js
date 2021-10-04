@@ -49,5 +49,10 @@ export default[
         path: '/blog',
         name : 'Blog',
         component: resolve(__dirname,'../pages/Blog.vue')
+    },
+    {
+        path: '/blog/:slug',
+        name : 'BlogDetail',
+        component: resolve(__dirname,'../pages/BlogDetail.vue')
     }
 ]
