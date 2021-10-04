@@ -13,11 +13,11 @@
               </div>
           </div>
           <div class="blog_item" v-for="blog in blogs" :key="blog.id" :class="blog.id===0 ? 'first-child':blog.id%3===2? 'last-child':''"  >
-              <div class="blog_item_image">
+              <nuxt-link :to="{name:'BlogDetail',params:{slug:blog.slug}}" class="blog_item_image">
                   <img :src="require(`@/assets/images/${blog.picture}.jpg`)" alt="" srcset="">
-              </div>
+              </nuxt-link>
               <div class="blog_item_desc">
-                  <span>Lorem ipsum dolor sit.</span>
+                  <span>{{blog.title}}</span>
               </div>
           </div>
       </div>
@@ -31,39 +31,57 @@ data(){
         blogs:[
             {
                 id:0,
-                picture:'photo1'
+                picture:'photo1',
+                slug:'blog-1',
+                title:'Blog-1 için açıklama'
             },
             {
                 id:1,
-                picture:'photo2'
+                picture:'photo2',
+                slug:'blog-2',
+                 title:'Blog-2 için açıklama'
             },
             {
                 id:2,
-                picture:'photo3'
+                picture:'photo3',
+                slug:'blog-3',
+                 title:'Blog-3 için açıklama'
             },
             {
                 id:3,
-                picture:'photo4'
+                picture:'photo4',
+                slug:'blog-4',
+                 title:'Blog-4 için açıklama'
             },
             {
                 id:4,
-                picture:'photo5'
+                picture:'photo5',
+                slug:'blog-5',
+                 title:'Blog-5 için açıklama'
             },
                         {
                 id:5,
-                picture:'photo6'
+                picture:'photo6',
+                slug:'blog-6',
+                 title:'Blog-6 için açıklama'
             },
             {
                 id:6,
-                picture:'photo11'
+                picture:'photo11',
+                slug:'blog-7',
+                 title:'Blog-7 için açıklama'
             },
             {
                 id:7,
-                picture:'photo8'
+                picture:'photo8',
+                slug:'blog-8',
+                 title:'Blog-8 için açıklama'
             },
             {
                 id:8,
-                picture:'photo9'
+                picture:'photo9',
+                slug:'blog-9',
+                 title:'Blog-9 için açıklama'
             }
         ]
     }
